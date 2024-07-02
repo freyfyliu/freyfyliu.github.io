@@ -21,7 +21,7 @@ repository               : "freyfyliu/freyfyliu.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "WX20240702-165948@2x.png"
+  avatar           : "avatar.png"
   name             : "Feng-Yuan Frey Liu"
   pronouns         : # example: "He/Him"  
   bio              : "PhD student in Astronomy"
