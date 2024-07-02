@@ -1,4 +1,4 @@
-# Welcome to Jekyll!
+a# Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your entire site, values
 # which you are expected to set up once and rarely need to edit after that.
@@ -21,11 +21,11 @@ repository               : "freyfyliu/freyfyliu.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "avatarsmall.jpeg"
+  avatar           : "profile.png"
   name             : "Feng-Yuan Frey Liu"
   pronouns         : # example: "He/Him"  
   bio              : "PhD student in Astronomy"
-  location         : "Edinburgh, The United Kingdom"
+  location         : "Edinburgh, the United Kingdom"
   employer         : "The University of Edinburgh"
   uri              : # URL
   email            : "Fengyuan.Liu@ed.ac.uk" 
