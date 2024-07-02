@@ -23,11 +23,12 @@ author:
   # Biographic information
   avatar           : "profile.png"
   name             : "Feng-Yuan Frey Liu"
-  pronouns         : # example: "He/Him"  
+  name             : "刘丰源 /Lyeu Fahng-Yooahn/"
+  pronouns         : "He/Him"  
   bio              : "PhD student in Astronomy"
   location         : "Edinburgh, the UK"
   employer         : "The University of Edinburgh"
-  uri              : # URL
+  uri              : "freyfyliu.github.io"
   email            : "Fengyuan.Liu@ed.ac.uk" 
 
   # Academic websites
