@@ -1,15 +1,23 @@
 ---
 permalink: /
-title: "Feng-Yuan Frey Liu's Home Page"
+title: "刘丰源 /Lyeu Fahng-Yooahn/"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-Hi there, welcome to my website. I am a PhD student in Astronomy (2023 to present) at the Institute for Astronomy, University of Edinburgh & Royal Observatory of Edinburgh. Before PhD study, I received my Master in Astrophysics degree at the National Astronomical Observatory of China (NAOC, 2020-2023) and my Bachelor in Science degree at the School of Astronomy and Space Science at Nanjing University (NJU, 2016-2020).
+Hi there, welcome to my website. I am a PhD student in Astronomy at the Institute for Astronomy, University of Edinburgh & Royal Observatory of Edinburgh. 
 
-My name Feng-Yuan (丰源, Fahng-Yooahn) means "abundant sources" in Chinese.
+My Chinese given name means "abundant sources".
+
+
+
+In Edinburgh, I am funded by Mary Brück scholarship. The scholarship is named after an extraordinary astronomer, whose life can be found [here](https://en.wikipedia.org/wiki/Mary_Br%C3%BCck).
+
+Before PhD study, I received my M.Sc in Astrophysics from the National Astronomical Observatory of China (NAOC), Chinese Academy of Sciences (CAS) working with Prof. Y. Sophia Dai and Prof. Jia-Sheng Huang. 
+I received my B.Sc. in Astronomy from the School of Astronomy and Space Science at Nanjing University (NJU) working with Prof. Yi Xie.
+
 
 A data-driven personal website
 ======
