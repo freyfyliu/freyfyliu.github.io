@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Hi there! My name is Feng-Yuan Liu (pronounced as /Fahng-Yooahn Lyeu/), or you can call me Frey. I am a PhD student in Astronomy at the Institute for Astronomy, University of Edinburgh / Royal Observatory of Edinburgh, the United Kingdom.
+Hi there! My name is Feng-Yuan Liu (丰源 刘 in Chinese, pronounced as /Fahng-Yooahn Lyeu/), or you can call me Frey. I am a PhD student in Astronomy at the Institute for Astronomy, University of Edinburgh / Royal Observatory of Edinburgh, the United Kingdom.
 
 A data-driven personal website
 ======
