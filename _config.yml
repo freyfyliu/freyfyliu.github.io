@@ -21,11 +21,11 @@ repository               : "freyfyliu/freyfyliu.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "avatarsmall.jpeg"
+  avatar           : "avatar.png"
   name             : "Feng-Yuan Frey Liu"
   pronouns         : # example: "He/Him"  
   bio              : "PhD student in Astronomy"
-  location         : "Edinburgh, The United Kingdom"
+  location         : "Edinburgh, the United Kingdom"
   employer         : "The University of Edinburgh"
   uri              : # URL
   email            : "Fengyuan.Liu@ed.ac.uk" 
