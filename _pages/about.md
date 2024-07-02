@@ -13,8 +13,6 @@ Before PhD study, I obtained Master in Astrophysics from the National Astronomic
 
 Research interests
 ======
-My Chinese given name means "abundant sources."
-It is difficult to not become an observer with such a name.
 My current research focuses on multi-wavelength observations of star-forming galaxies and active galactic nuclei at different epochs of the Universe.
 Specifically, I am working on the following two topics.
 
