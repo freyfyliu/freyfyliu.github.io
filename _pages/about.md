@@ -7,9 +7,9 @@ redirect_from:
   - /about.html
 ---
 
-I am a PhD student in Astronomy at the Institute for Astronomy, University of Edinburgh & Royal Observatory of Edinburgh under the supervision of Prof. James Dunlop, Prof. Ross McLure, and Dr. Derek McLeod. 
-My PhD study is funded by Mary Brück scholarship. 
-The scholarship is named after an extraordinary woman astronomer and science author, whose life can be found [here](https://en.wikipedia.org/wiki/Mary_Br%C3%BCck).
+I am a PhD student in Astronomy at the [Institute for Astronomy](https://ifa.roe.ac.uk/), [University of Edinburgh](https://www.ed.ac.uk/), [Royal Observatory of Edinburgh](https://www.roe.ac.uk/).
+My PhD study is under the supervision of Prof. [James Dunlop](https://www.roe.ac.uk/~jsd/), Prof. [Ross McLure](https://www.roe.ac.uk/~rjm/Ross_McLures_Webpage/Welcome.html), and Dr. [Derek McLeod](https://www.roe.ac.uk/ifa/people/mcleod.html).
+I am also a [Mary Brück](https://en.wikipedia.org/wiki/Mary_Br%C3%BCck) scholar, which is named after the extraordinary woman astronomer who spent most of her life here at the Royal Observatory of Edinburgh.
 
 Before PhD study, I received my M.Sc in Astrophysics from the National Astronomical Observatory of Chinese Academy of Sciences (NAOC) working with Prof. Y. Sophia Dai and Prof. Jia-Sheng Huang.
 I received my B.Sc. in Astronomy from the School of Astronomy and Space Science at Nanjing University (NJU) working with Prof. Yi Xie.
