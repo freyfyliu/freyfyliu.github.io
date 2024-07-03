@@ -7,13 +7,13 @@ redirect_from:
   - /about.html
 ---
 
-I am a PhD student in Astronomy at the [Institute for Astronomy](https://ifa.roe.ac.uk/), [University of Edinburgh](https://www.ed.ac.uk/), [Royal Observatory of Edinburgh](https://www.roe.ac.uk/).
-My PhD study is under the supervision of Prof. [James Dunlop](https://www.roe.ac.uk/~jsd/), Prof. [Ross McLure](https://www.roe.ac.uk/~rjm/Ross_McLures_Webpage/Welcome.html), and Dr. [Derek McLeod](https://www.roe.ac.uk/ifa/people/mcleod.html) and funded by the [Mary Brück](https://en.wikipedia.org/wiki/Mary_Br%C3%BCck) scholarship.
+I am a PhD student in Astronomy at the [Institute for Astronomy](https://ifa.roe.ac.uk/), [University of Edinburgh](https://www.ed.ac.uk/), [Royal Observatory of Edinburgh](https://www.roe.ac.uk/) funded by the [Mary Brück](https://en.wikipedia.org/wiki/Mary_Br%C3%BCck) scholarship.
+I conduct my research on observational extragalactic astronomy working with Prof. [James Dunlop](https://www.roe.ac.uk/~jsd/), Prof. [Ross McLure](https://www.roe.ac.uk/~rjm/Ross_McLures_Webpage/Welcome.html), and Dr. [Derek McLeod](https://www.roe.ac.uk/ifa/people/mcleod.html).
 Before PhD study, I obtained Master in Astrophysics from the National Astronomical Observatory of China ([NAOC](https://english.nao.cas.cn/)) and Bachelor in Astronomy from Nanjing University ([NJU](https://astronomy.nju.edu.cn/EN/index.html)).
 
 Research interests
 ======
-My research focuses on extragalactic physics, with emphasis on star formation in high-redshift galaxies and evolution of supermassive black holes. I use various observational data from UV/optical to far-infrared/mm to detect them at different ages of the Universe, from the nearby universe to the Epoch of Reionization. Specifically, I have been working on the following two topics after entering my PhD program.
+While I have a broad interest in extragalactic astronomy, I am particularly interested in star formation in the high-redshift Universe and evolution of supermassive black holes. I use various observational data from UV/optical to far-infrared/mm to observe galaxies at different cosmic times, from the local Universe to the Epoch of Reionization. I am currently working on the following two topics after entering my PhD program.
 
 Dust-obscured star formation in the young Universe revealed by combining JWST PRIMER and ALMA
 ------
@@ -21,4 +21,4 @@ A significant fraction of star formation over cosmic history is obscured by dust
 
 Evolutionary status of starburst dusty unobscured quasars through multi-wavelength observations
 ------
-Quasars are the most powerful stage in supermassive black hole evolution, and their feedback usually causes reduction of star formation and dust content in the host galaxies. However, there are some optical-unobscured quasars that exhibit far-infrared excess, suggesting starburst and massive dust in their host galaxies. This population challenges current understanding of quasar evolution model. We have used single-dish mm telescope IRMA-30m and interferometer NOEMA to observe molecular gas in samples of broad-emission-line SDSS quasars with HyLIRG-level Herschel SPIRE fluxes. We confirmed that these systems are mostly unlensed and in a short transitional phase. We also found velocity and spatial offsets between optical and mm observations, which may be a sign of relative motions between the nuclei and galaxies. Further study requires more state-of-the-art facilities to resolve them spatially and spectroscopically, such as ALMA and VLT.
+Quasars are the most powerful stage in supermassive black hole evolution, and their feedback usually causes reduction of star formation and dust content in the host galaxies. However, some optical-unobscured quasars exhibit far-infrared excess, suggesting starburst and massive dust in their host galaxies. This population challenges current understanding of quasar evolution model, especially on how intense star formation coexists with active galactic nuclei. We have used single-dish mm telescope IRMA-30m and interferometer NOEMA to observe molecular gas in samples of broad-emission-line SDSS quasars with HyLIRG-level Herschel SPIRE fluxes. Our works have confirmed that these systems are mostly unlensed and in a short transitional starburst phase. We also found velocity and spatial offsets between optical and mm observations, which may be a sign of relative motions between the nuclei and galaxies. Further study requires more state-of-the-art facilities to resolve them spatially and spectroscopically, such as ALMA and VLT.
