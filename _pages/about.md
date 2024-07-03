@@ -8,7 +8,9 @@ redirect_from:
 ---
 
 I am a Ph.D. student in Astronomy and [Mary Brück](https://en.wikipedia.org/wiki/Mary_Br%C3%BCck) scholar at the [Institute for Astronomy](https://ifa.roe.ac.uk/), [University of Edinburgh](https://www.ed.ac.uk/), [Royal Observatory of Edinburgh](https://www.roe.ac.uk/) working with Prof. [James Dunlop](https://www.roe.ac.uk/~jsd/), Prof. [Ross McLure](https://www.roe.ac.uk/~rjm/Ross_McLures_Webpage/Welcome.html), and Dr. [Derek McLeod](https://www.roe.ac.uk/ifa/people/mcleod.html).
-Before PhD study, I obtained M.Sc. in Astrophysics from the National Astronomical Observatory of China ([NAOC](https://english.nao.cas.cn/)) and B.Sc. in Astronomy from Nanjing University ([NJU](https://astronomy.nju.edu.cn/EN/index.html)).
+I obtained my M.Sc. degree in Astrophysics from the National Astronomical Observatory of China ([NAOC](https://english.nao.cas.cn/)) and B.Sc. degree in Astronomy from Nanjing University ([NJU](https://astronomy.nju.edu.cn/EN/index.html)).
+
+I use my Chinese name Feng-Yuan (丰源, /Fahng-Yooan/) Liu (刘, /Lyeu/) for publications, but I usually go by Frey.
 
 Research interests
 ======
