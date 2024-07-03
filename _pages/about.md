@@ -14,7 +14,7 @@ Research interests
 ======
 While I have a broad interest in extragalactic astronomy, I am particularly interested in star formation in the high-redshift Universe and evolution of supermassive black holes. I use various observational data from UV/optical to far-infrared/mm to observe galaxies at different cosmic times, from the local Universe to the Epoch of Reionization. I am currently working on the following two topics after entering my PhD program.
 
-<img src='/images/primer_v6_trimmed.png'>
+<img src='/images/primer_v6_trimmed.png' width="100">
 
 Dust-obscured star formation in the young Universe revealed by combining JWST PRIMER and ALMA
 ------
