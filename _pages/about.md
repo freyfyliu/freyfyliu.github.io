@@ -11,7 +11,7 @@ I am Feng-Yuan Liu (丰源, /Fahng-Yooan/; 刘, /Lyeu/), a Ph.D. student in Astr
 
 I hold an M.Sc. degree in Astrophysics from the National Astronomical Observatory of China (NAOC) and a B.Sc. degree in Astronomy from Nanjing University (NJU).
 
-For publications, I use my Chinese name, Feng-Yuan Liu, which means "abundant sources" -- not bad for an observer! In daily life, I go by Frey.
+In daily life, I go by Frey. For publications, I use my Chinese name, Feng-Yuan Liu, which means "abundant sources" -- not bad for an observer!
 
 <img src='/images/lamost.jpg'>
 (With the largest optical telescope in China LAMOST, 2020)
