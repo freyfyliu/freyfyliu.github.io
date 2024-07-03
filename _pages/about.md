@@ -7,8 +7,8 @@ redirect_from:
   - /about.html
 ---
 
-I am a PhD student in Astronomy and [Mary Brück](https://en.wikipedia.org/wiki/Mary_Br%C3%BCck) scholar at the [Institute for Astronomy](https://ifa.roe.ac.uk/), [University of Edinburgh](https://www.ed.ac.uk/), [Royal Observatory of Edinburgh](https://www.roe.ac.uk/) working with Prof. [James Dunlop](https://www.roe.ac.uk/~jsd/), Prof. [Ross McLure](https://www.roe.ac.uk/~rjm/Ross_McLures_Webpage/Welcome.html), and Dr. [Derek McLeod](https://www.roe.ac.uk/ifa/people/mcleod.html).
-Before PhD study, I obtained Master in Astrophysics from the National Astronomical Observatory of China ([NAOC](https://english.nao.cas.cn/)) and Bachelor in Astronomy from Nanjing University ([NJU](https://astronomy.nju.edu.cn/EN/index.html)).
+I am a Ph.D. student in Astronomy and [Mary Brück](https://en.wikipedia.org/wiki/Mary_Br%C3%BCck) scholar at the [Institute for Astronomy](https://ifa.roe.ac.uk/), [University of Edinburgh](https://www.ed.ac.uk/), [Royal Observatory of Edinburgh](https://www.roe.ac.uk/) working with Prof. [James Dunlop](https://www.roe.ac.uk/~jsd/), Prof. [Ross McLure](https://www.roe.ac.uk/~rjm/Ross_McLures_Webpage/Welcome.html), and Dr. [Derek McLeod](https://www.roe.ac.uk/ifa/people/mcleod.html).
+Before PhD study, I obtained M.Sc. in Astrophysics from the National Astronomical Observatory of China ([NAOC](https://english.nao.cas.cn/)) and B.Sc. in Astronomy from Nanjing University ([NJU](https://astronomy.nju.edu.cn/EN/index.html)).
 
 Research interests
 ======
@@ -21,3 +21,5 @@ A significant fraction of star formation over cosmic history is obscured by dust
 Evolutionary status of starburst dusty unobscured quasars through multi-wavelength observations
 ------
 Quasars are the most powerful stage in supermassive black hole evolution, and their feedback usually causes reduction of star formation and dust content in the host galaxies. However, a minor but non-negligible fraction of optical-unobscured quasars exhibits far-infrared excess, suggesting starburst and massive dust in their host galaxies. This population challenges current understanding of quasar evolution model, especially on how intense star formation coexists with active galactic nuclei. However, our identification of this population can be affected by observational effects, such as unresolved multiplicity and strong gravitational lensing. We have used single-dish mm telescope IRMA-30m and interferometer NOEMA to observe molecular gas in samples of broad-emission-line SDSS quasars with HyLIRG-level Herschel SPIRE fluxes. Our works have confirmed that these systems are mostly unlensed and in a short transitional starburst phase. We also found velocity and spatial offsets between optical and mm observations, which may be a sign of relative motions between the nuclei and galaxies. Further study requires more state-of-the-art facilities to resolve them spatially and spectroscopically, such as ALMA and VLT.
+
+* images/hylirglense.png
