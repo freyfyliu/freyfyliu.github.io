@@ -7,8 +7,8 @@ redirect_from:
   - /about.html
 ---
 
-I am a PhD student in Astronomy at the [Institute for Astronomy](https://ifa.roe.ac.uk/), [University of Edinburgh](https://www.ed.ac.uk/), [Royal Observatory of Edinburgh](https://www.roe.ac.uk/) funded by the [Mary Brück](https://en.wikipedia.org/wiki/Mary_Br%C3%BCck) scholarship.
-I conduct my research on observational extragalactic astronomy working with Prof. [James Dunlop](https://www.roe.ac.uk/~jsd/), Prof. [Ross McLure](https://www.roe.ac.uk/~rjm/Ross_McLures_Webpage/Welcome.html), and Dr. [Derek McLeod](https://www.roe.ac.uk/ifa/people/mcleod.html).
+I am a PhD student in Astronomy and [Mary Brück](https://en.wikipedia.org/wiki/Mary_Br%C3%BCck) scholar at the [Institute for Astronomy](https://ifa.roe.ac.uk/), [University of Edinburgh](https://www.ed.ac.uk/), [Royal Observatory of Edinburgh](https://www.roe.ac.uk/).
+I am working with Prof. [James Dunlop](https://www.roe.ac.uk/~jsd/), Prof. [Ross McLure](https://www.roe.ac.uk/~rjm/Ross_McLures_Webpage/Welcome.html), and Dr. [Derek McLeod](https://www.roe.ac.uk/ifa/people/mcleod.html) to study extragalaxies observationally.
 Before PhD study, I obtained Master in Astrophysics from the National Astronomical Observatory of China ([NAOC](https://english.nao.cas.cn/)) and Bachelor in Astronomy from Nanjing University ([NJU](https://astronomy.nju.edu.cn/EN/index.html)).
 
 Research interests
