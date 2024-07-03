@@ -3,7 +3,7 @@ title: "Probing a regular non-minimal Einstein-Yang-Mills black hole with gravit
 collection: publications
 permalink: /publication/paper1
 excerpt: 'https://doi.org/10.1016/j.physletb.2019.06.052'
-date: 2019-08
+date: 2019-08-01
 venue: 'Physics Letters B'
 slidesurl: 'https://ui.adsabs.harvard.edu/abs/2019PhLB..795..475L/abstract'
 paperurl: 'https://doi.org/10.1016/j.physletb.2019.06.052'
