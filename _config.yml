@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Feng-Yuan Frey Liu / Home Page"
+title                    : "Home Page"
 title_separator          : "-"
 name                     : &name "Feng-Yuan Frey Liu"
 description              : &description "personal description"
