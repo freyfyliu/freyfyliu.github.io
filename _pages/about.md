@@ -12,7 +12,7 @@ I obtained my M.Sc. degree in Astrophysics from the National Astronomical Observ
 
 I use my Chinese name Feng-Yuan (丰源, /Fahng-Yooan/) Liu (刘, /Lyeu/) for publications, and go by Frey in daily life.
 
-[<img src='/images/lamost.png'>](https://en.wikipedia.org/wiki/LAMOST) 
+[<img src='/images/lamost.jpg'>](https://en.wikipedia.org/wiki/LAMOST) 
 
 Research interests
 ======
