@@ -7,16 +7,17 @@ redirect_from:
   - /about.html
 ---
 
-I am a Ph.D. student in Astronomy and [Mary Brück](https://en.wikipedia.org/wiki/Mary_Br%C3%BCck) scholar at the [Institute for Astronomy](https://ifa.roe.ac.uk/), [University of Edinburgh](https://www.ed.ac.uk/), [Royal Observatory of Edinburgh](https://www.roe.ac.uk/) working with Prof. [James Dunlop](https://www.roe.ac.uk/~jsd/), Prof. [Ross McLure](https://www.roe.ac.uk/~rjm/Ross_McLures_Webpage/Welcome.html), and Dr. [Derek McLeod](https://www.roe.ac.uk/ifa/people/mcleod.html).
-I obtained my M.Sc. degree in Astrophysics from the National Astronomical Observatory of China ([NAOC](https://english.nao.cas.cn/)) and B.Sc. degree in Astronomy from Nanjing University ([NJU](https://astronomy.nju.edu.cn/EN/index.html)).
+I am a Ph.D. student in Astronomy and Mary Brück scholar at the Institute for Astronomy, University of Edinburgh, Royal Observatory of Edinburgh working with Prof. James Dunlop, Prof. Ross McLure, and Dr. Derek McLeod.
+I obtained my M.Sc. degree in Astrophysics from the National Astronomical Observatory of China (NAOC) and B.Sc. degree in Astronomy from Nanjing University (NJU).
 
-I use my Chinese name Feng-Yuan (丰源, /Fahng-Yooan/) Liu (刘, /Lyeu/) for publications, and go by Frey in daily life.
+I use my Chinese name Feng-Yuan Liu (given name: 丰源, /Fahng-Yooan/, "abundant sources"; family name: 刘, /Lyeu/) for publications, and go by Frey in daily life.
 
 [<img src='/images/lamost.jpg'>](https://en.wikipedia.org/wiki/LAMOST) 
+(With LAMOST, the largest optical telescope in China)
 
 Research interests
 ======
-As an observer, I am particularly interested in star formation in the high-redshift Universe and evolution of supermassive black holes. I use various observational data from UV/optical to far-infrared/mm to investigate galaxies at different cosmic times, from the local Universe to the Epoch of Reionization. I am currently working on the following two topics after entering my PhD program.
+As an observer, I am particularly interested in star formation in the high-redshift Universe and evolution of supermassive black holes. I use various observational data from UV/optical to far-infrared/mm to investigate galaxy evolution throughout cosmic history, from the local Universe to the Epoch of Reionization. I am currently working on the following two topics:
 
 Dust-obscured star formation in the young Universe revealed by combining JWST PRIMER and ALMA
 ------
