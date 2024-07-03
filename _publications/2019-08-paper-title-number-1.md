@@ -2,7 +2,7 @@
 title: "Probing a regular non-minimal Einstein-Yang-Mills black hole with gravitational lensings"
 collection: publications
 permalink: /publication/paper1
-excerpt: "https://doi.org/10.1016/j.physletb.2019.06.052"
+excerpt: 'https://doi.org/10.1016/j.physletb.2019.06.052'
 date: 2019-08
 venue: 'Physics Letters B'
 slidesurl: 'https://ui.adsabs.harvard.edu/abs/2019PhLB..795..475L/abstract'
