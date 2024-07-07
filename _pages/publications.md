@@ -6,7 +6,7 @@ author_profile: true
 ---
 
 First-author papers
-=====
+-----
 [Dust and Cold Gas Properties of Starburst HyLIRG Quasars at z ∼ 2.5](https://iopscience.iop.org/article/10.3847/1538-4357/ad24fe)
 
 <b>Liu, F.-Y.<b>
@@ -24,7 +24,7 @@ First-author papers
 , Mai, Y.-F., Wu, W.-Y., et al. 2019, Physics Letters B, 795, 475. doi:10.1016/j.physletb.2019.06.052
 
 Other papers
-=====
+-----
 [A Large Massive Quiescent Galaxy Sample at z ∼ 1.2](https://iopscience.iop.org/article/10.3847/1538-4357/abbeff)
 
 Xu, H., Dai, Y.~S., Huang, J.-S., et al. 2020, ApJ, 905, 103. doi:10.3847/1538-4357/abbeff
