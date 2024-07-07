@@ -7,14 +7,14 @@ redirect_from:
   - /about.html
 ---
 
-I am Feng-Yuan Liu (丰源, /Fahng-Yooan/; 刘, /Lyeu/), a Ph.D. student in Astronomy and Mary Brück Scholar at the Institute for Astronomy, University of Edinburgh, Royal Observatory of Edinburgh. I am currently working under the supervision of Prof. James Dunlop, Prof. Ross McLure, and Dr. Derek McLeod.
+I am Feng-Yuan Liu (given name: 丰源, /Fahng-Yooan/; surname: 刘, /Lyeu/), a Ph.D. student in Astronomy and Mary Brück Scholar at the Institute for Astronomy, University of Edinburgh, Royal Observatory of Edinburgh. I am currently working under the supervision of Prof. James Dunlop, Prof. Ross McLure, and Dr. Derek McLeod.
 
 I hold an M.Sc. degree in Astrophysics from the National Astronomical Observatory of China (NAOC) and a B.Sc. degree in Astronomy from Nanjing University (NJU).
 
-In daily life, I go by Frey. For publications, I use my Chinese name, Feng-Yuan Liu, which means "abundant sources" -- not bad for an observer!
+Fun fact about me: My Chinese first name means "abundant sources" -- not bad for an observer! I also go by Frey in daily life.
 
 <img src='/images/lamost.jpg'>
-(With the largest optical telescope in China LAMOST, 2020)
+<i>(With the largest optical telescope in China LAMOST, 2020)<i>
 
 Research interests
 ======
