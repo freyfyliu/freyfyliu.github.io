@@ -5,7 +5,7 @@ permalink: /research/
 author_profile: true
 ---
 
-My research interests lie in extragalactic physics, particularly star formation in the high-redshift Universe and the evolution of supermassive black holes. I use various observational data, ranging from UV/optical to far-infrared/mm, to investigate galaxy evolution throughout cosmic history, from the low-redshift Universe to the Epoch of Reionization.
+My research interests lie in observational extragalactic physics, particularly star formation in the high-redshift Universe and the evolution of supermassive black holes. I use various telescope data, ranging from UV/optical to far-infrared/mm, to investigate galaxy evolution throughout cosmic history, from the low-redshift Universe to the Epoch of Reionization.
 
 I am currently working on the following two topics:
 
