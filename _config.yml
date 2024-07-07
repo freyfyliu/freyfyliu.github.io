@@ -1,3 +1,4 @@
+
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your entire site, values
@@ -200,16 +201,19 @@ kramdown:
 
 # Collections
 collections:
-  teaching:
+  research:
     output: true
     permalink: /:collection/:path/
   publications:
     output: true
     permalink: /:collection/:path/
-  portfolio:
+  presentations:
     output: true
     permalink: /:collection/:path/
-  talks:
+  outreach:
+    output: true
+    permalink: /:collection/:path/
+  gallery:
     output: true
     permalink: /:collection/:path/
 
