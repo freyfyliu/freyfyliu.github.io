@@ -11,9 +11,7 @@ First-author papers
 
 Liu, F.-Y., Dai, Y.~S., Omont, A., et al. 2024, ApJ, 964, 136. doi:10.3847/1538-4357/ad24fe
 
-[富尘埃宽发射线类星体的CO发射 (CO Emission of Dust-Rich Broad-Emission-Line Quasars)](http://www.shao.cas.cn/twxjz/wzll/202304/202304yjlw/202312/P020240123566166864142.pdf)
-
-(published in Chinese)
+[富尘埃宽发射线类星体的CO发射 (CO Emission of Dust-Rich Broad-Emission-Line Quasars, published in Chinese)](http://www.shao.cas.cn/twxjz/wzll/202304/202304yjlw/202312/P020240123566166864142.pdf)
 
 刘丰源 (Liu, F.-Y.),戴昱,吴京文. 富尘埃宽发射线类星体的CO发射[J]. 天文学进展,2023,41(4):529-545. DOI:10.3969/j.issn.1000-8349.2023.04.05.
 
