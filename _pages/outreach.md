@@ -23,19 +23,19 @@ Teaching and talks
 -----
 Introducing the amazement I experience in astronomy to others has always been enjoyable and rewarding for me. I have given lectures at the following institutes:
 
-(7) <i>Titles pending<i>, Mills Observatory, Dundee UK 2024, as a part of Winter Talks invited by Dundee Astronomical Society;
+(7) *Titles pending*, Mills Observatory, Dundee UK 2024, as a part of Winter Talks invited by Dundee Astronomical Society;
 
-(6) <i>Program pending<i>, University of Nairobi, Kenya 2024, as a part of [TARA](https://www.dara-project.org/) program;
+(6) *Titles pending*, University of Nairobi, Kenya 2024, as a part of [TARA](https://www.dara-project.org/) program;
 
-(5) <i>What do we talk about when we talk about the starry sky<i>, Online, as a part of Reach Out Program (ROP) to help high-schoolers and undergraduates from underdeveloped regions with career choice, Guizhou Province, China 2023;
+(5) *What do we actually talk about when we talk about the starry sky*, Online, as a part of Reach Out Program (ROP) to help high-schoolers and undergraduates from underdeveloped regions with career choice, Guizhou Province, China 2023;
 
-(4) <i>The trajectory and impact of spacecraft debris in the low Earth orbit<i>, Peking University, Science coach for the University's team in [16th CASC Cup](https://iisl.space/index.php/manfredlachs2024/) Manfred Lachs International Space Law Moot Court Competition (gold medal / 1st place in China), Beijing, China, 2021;
+(4) *The trajectory and impact of spacecraft debris in the low Earth orbit*, Peking University, Science coach for the University's team in [16th CASC Cup](https://iisl.space/index.php/manfredlachs2024/) Manfred Lachs International Space Law Moot Court Competition (gold medal / 1st place in China), Beijing, China, 2021;
 
-(3) <i>Radio observations of pulsing phenomena in the universe<i>, Tsinghua University, Science coach for the University's team in [ASC20-21](http://www.asc-events.org/StudentChallenge/History/2020-2021/index.html#:~:text=ASC%202020%2D2021&text=More%20than%20300%20teams%20from,and%20Technology%20in%20Shenzhen%2C%20China.) (Silver medal & 2nd place in the world / e-Prize on the best astronomy problem solver), Beijing, China, 2020;
+(3) *Radio observations of pulsing phenomena in the universe*, Tsinghua University, Science coach for the University's team in [ASC20-21](http://www.asc-events.org/StudentChallenge/History/2020-2021/index.html#:~:text=ASC%202020%2D2021&text=More%20than%20300%20teams%20from,and%20Technology%20in%20Shenzhen%2C%20China.) (Silver medal & 2nd place in the world / e-Prize on the best astronomy problem solver), Beijing, China, 2020;
 
-(2) <i>Telescopes in the world<i>, Yuhua Elementary School, organised by the Astronomy Society of Nanjing University, Nanjing, 2018;
+(2) *Telescopes in the world*, Yuhua Elementary School, organised by the Astronomy Society of Nanjing University, Nanjing, 2018;
 
-(1) <i>Stories about constellations<i> and <i>Experiencing space flight<i>, Chihshang Middle School, as a part of [孔子行脚](http://hopingdownload.ntnu.edu.tw/2017/) Taiwan-Mainland China cultural exchange program to support indigenous villages' education, Taiwan, 2017.
+(1) *Stories about constellations* and *Experiencing space flight*, Chihshang Middle School, as a part of [孔子行脚](http://hopingdownload.ntnu.edu.tw/2017/) Taiwan-Mainland China cultural exchange program to support indigenous villages' education, Taiwan, 2017.
 
 Others
 -----
