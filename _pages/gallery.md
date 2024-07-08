@@ -35,7 +35,7 @@ I enjoy taking pictures of mostly nature and sometimes people. I worked part-tim
 <img src='/images/swan.jpg'>
 <i>Swans hatching eggs in the pond next to the Royal Observatory of Edinburgh<i>
 
-<img src='/images/pent.jpg'>
+<img src='/images/pent.JPG'>
 <i>Pentland Hills in the suburb of Edinburgh<i>
   
 <img src='/images/cloud.JPG'>
