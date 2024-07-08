@@ -37,7 +37,7 @@ Introducing the amazement I feel about astronomy to others has always been enjoy
 
 (2) Yuhua Elementary School, Nanjing 2018, organised by the Astronomy Society of Nanjing University;
 
-(1) Chihshang Middle School, Taiwan 2017, as a part of [孔子行脚](http://hopingdownload.ntnu.edu.tw/2017/) Taiwan-Mainland China cultural exchange program to support indigenous groups.
+(1) Chihshang Middle School, Taiwan 2017, as a part of [孔子行脚](http://hopingdownload.ntnu.edu.tw/2017/) Taiwan-Mainland China cultural exchange program to support indigenous villages' education.
 
 Others
 -----
