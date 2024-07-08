@@ -22,8 +22,16 @@ First-author papers
 **Liu, F.-Y.**, Mai, Y.-F., Wu, W.-Y., et al. 2019, Physics Letters B, 795, 475. doi:10.1016/j.physletb.2019.06.052
 
 
-Other papers
+Contributed papers
 -----
+(3) [JWST PRIMER: A new multi-field determination of the evolving galaxy UV luminosity function at redshifts z≃9−15](https://arxiv.org/abs/2403.03171)
+
+Stanton, T.~M., Cullen, F., McLure, R.~J., et al. 2024, arXiv:2405.00774. doi:10.48550/arXiv.2405.00774
+
+(2) [The NIRVANDELS Survey: the stellar and gas-phase mass-metallicity relations of star-forming galaxies at z = 3.5](https://arxiv.org/abs/2405.00774)
+
+Donnan, C.~T., McLure, R.~J., Dunlop, J.~S., et al. 2024, arXiv:2403.03171. doi:10.48550/arXiv.2403.03171
+
 (1) [A Large Massive Quiescent Galaxy Sample at z ∼ 1.2](https://iopscience.iop.org/article/10.3847/1538-4357/abbeff)
 
 Xu, H., Dai, Y.~S., Huang, J.-S., et al. 2020, ApJ, 905, 103. doi:10.3847/1538-4357/abbeff
