@@ -23,13 +23,13 @@ I am also a science influencer on Chinese social platform Douban (豆瓣). More 
 
 Teaching and talks
 -----
-Introducing the amazement from astronomy to others has always been enjoyable and rewarding for me. I have been to the following institutes:
+Introducing the amazement I feel about astronomy to others has always been enjoyable and rewarding for me. I have been to the following institutes:
 
 6. Mills Observatory, Dundee UK 2024, as a part of Winter Talks from Dundee Astronomical Society;
 
 5. University of Nairobi, Kenya 2024, as a part of [TARA](https://www.dara-project.org/) program;
 
-4. Online, Guizhou Province, China 2023, as a part of Reach Out Program (ROP) to help high-schoolers and undergraduates with career choice from underdeveloped regions;
+4. Online, Guizhou Province, China 2023, as a part of Reach Out Program (ROP) to help high-schoolers and undergraduates from underdeveloped regions with career choice;
 
 3. Peking University, Beijing, China 2021, Science coach for the University's team in [16th CASC Cup](https://iisl.space/index.php/manfredlachs2024/) Manfred Lachs International Space Law Moot Court Competition, result: gold medal / first place in China;
 
