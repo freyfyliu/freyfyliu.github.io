@@ -19,7 +19,7 @@ I have translated several English popular science books to Chinese:
 
 Teaching and talks
 -----
-Introducing the amazement I experience in astronomy to others has always been enjoyable and rewarding for me. I have been to the following institutes:
+Introducing the amazement I experience in astronomy to others has always been enjoyable and rewarding for me. I have given lectures at the following institutes:
 
 (7) Mills Observatory, Dundee UK 2024, as a part of Winter Talks from Dundee Astronomical Society;
 
