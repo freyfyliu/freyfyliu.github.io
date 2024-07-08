@@ -23,7 +23,7 @@ I am also a science influencer on Chinese social platform Douban (豆瓣). More 
 
 Teaching and talks
 -----
-Introducing the amazement I feel about astronomy to others has always been enjoyable and rewarding for me. I have been to the following institutes:
+Introducing the amazement I experience in astronomy to others has always been enjoyable and rewarding for me. I have been to the following institutes:
 
 (7) Mills Observatory, Dundee UK 2024, as a part of Winter Talks from Dundee Astronomical Society;
 
