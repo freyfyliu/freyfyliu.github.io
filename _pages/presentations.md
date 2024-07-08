@@ -20,4 +20,4 @@ IAU general assembly, Cape Town, South Africa, Aug 2024
 
 (1) **What do millimeter observations tell us about quasars?**
 
-SOPA PhD student high-land conference, University of Edinburgh, March 2024
+SOPA PhD student highland conference, University of Edinburgh, March 2024
