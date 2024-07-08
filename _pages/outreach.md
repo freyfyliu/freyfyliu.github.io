@@ -42,5 +42,5 @@ Introducing the amazement I feel about astronomy to others has always been enjoy
 Others
 -----
 I am particularly interested in presenting astronomy concepts in art forms and always ready for collaboration.
-I helped curate Cosmic Elements (步天歌), one of the largest astronomy-themed contemporary art exhibitions in China. 
+I helped curate Cosmic Elements (步天歌) in 2023, one of the largest astronomy-themed contemporary art exhibitions in China. 
 It has toured to many major cities in China, including Beijing, Shanghai, Shenzhen, and Chengdu.
