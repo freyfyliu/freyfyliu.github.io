@@ -29,7 +29,7 @@ The 8th Interstellar Physics and Chemistry Seminar, Three Gorges University, Yic
 
 (1) **The strong lensing effect of regular non-minimal Einstein-Yang-Mills black holes**
 
-2020 Student Astronomy Academic Seminar (1st award speaker and Linbridge scholarship), KIAA / School of Physics and Astronomy, Peking University, Beijing, China, Sep 2020.
+2020 Student Astronomy Academic Seminar (1st award and Linbridge scholarship winner), KIAA / School of Physics and Astronomy, Peking University, Beijing, China, Sep 2020.
 
 Posters
 -----
