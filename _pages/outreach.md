@@ -21,7 +21,7 @@ Teaching and talks
 -----
 Introducing the amazement I experience in astronomy to others has always been enjoyable and rewarding for me. I have given lectures at the following institutes:
 
-(7) Mills Observatory, Dundee UK 2024, as a part of Winter Talks from Dundee Astronomical Society;
+(7) Mills Observatory, Dundee UK 2024, as a part of Winter Talks invited by Dundee Astronomical Society;
 
 (6) University of Nairobi, Kenya 2024, as a part of [TARA](https://www.dara-project.org/) program;
 
