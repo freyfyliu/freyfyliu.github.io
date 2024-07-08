@@ -7,7 +7,7 @@ redirect_from:
   - /gallery.html
 ---
 
-Life of a PhD student is busy but still manageable for hobbies. I like hiking, bouldering and playing table tennis with friends in my spare time.
+Life as a PhD student is busy but still manageable for hobbies. I normally hike, boulder and play table tennis with friends after work.
 
 Photography connects me with both nature (always) and people (sometimes). I volunteered as a recorder and data analyst for wild animal protection charities [Eco-Bridge Continental](https://eco-bridgecontinental.org.cn/), [Let Birds Fly](https://baike.baidu.com/item/%E8%AE%A9%E5%80%99%E9%B8%9F%E9%A3%9E/2394992) and [Shan Shui](http://en.shanshui.org/) when I was in China. I am actively looking for opportunities to participate in conservation in Scotland, through either photography (e.g., [Wiki Loves Earth](https://commons.wikimedia.org/wiki/Commons:Wiki_Loves_Earth_2024_in_Scotland)) or data analysis.
 
