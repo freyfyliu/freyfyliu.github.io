@@ -17,8 +17,6 @@ I have translated several English popular science books to Chinese:
 
 (1) **[Is Einstein still right?](https://global.oup.com/academic/product/is-einstein-still-right-9780198842125?cc=gb&lang=en&) (Oxford Press, 2020)** Chinese version 爱因斯坦还是对的吗 published by Hunan Science and Technology Press (湖南科技出版社) in 2023.
 
-I am also a science influencer on Chinese social platform Douban (豆瓣). More than 13K followers and 5M reads by July 2024.
-
 Teaching and talks
 -----
 Introducing the amazement I experience in astronomy to others has always been enjoyable and rewarding for me. I have been to the following institutes:
@@ -42,3 +40,5 @@ Others
 I am particularly interested in presenting astronomy concepts in art forms and always ready for collaboration.
 I helped curate Cosmic Elements (步天歌) in 2023, one of the largest astronomy-themed contemporary art exhibitions in China. 
 It has toured to many major cities in China, including Beijing, Shanghai, Shenzhen, and Chengdu.
+
+I am also a science communicator on Chinese social platform Douban (豆瓣). More than 13K followers and 5M reads by July 2024.
