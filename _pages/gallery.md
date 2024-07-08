@@ -38,7 +38,7 @@ I enjoy taking pictures of mostly nature and sometimes people. I worked part-tim
 <img src='/images/pent.jpg'>
 <i>Pentland Hills in the suburb of Edinburgh<i>
   
-<img src='/images/cloud.jpg'>
+<img src='/images/cloud.JPG'>
 <i>Nacreous clouds observed in Scotland<i>
 
 I like various genres of music, from rock to classical. My interested instruments include piano, guitar and harmonica. I was the president of Linquan (林泉, "forest-spring") Piano Society at Nanjing University 2017-2018.
