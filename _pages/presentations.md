@@ -9,7 +9,7 @@ Conference talks
 -----
 (6) **The cosmic star formation history towards the Epoch of Reionization from a JWST-ALMA perspective (pending decision)**
 
-[The 40th annual IAP symposium](https://iapsymposium2024.sciencesconf.org/), Institut d'Astrophysique de Paris, Paris, France, Dec 2024.
+[The 40th IAP symposium](https://iapsymposium2024.sciencesconf.org/), Institut d'Astrophysique de Paris, Paris, France, Dec 2024.
 
 (5) **Dust-obscured star formation in the young Universe revealed by combining JWST PRIMER and ALMA**
 
