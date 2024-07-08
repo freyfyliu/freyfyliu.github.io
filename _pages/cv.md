@@ -7,4 +7,4 @@ redirect_from:
   - /resume
 ---
 
-Please email me for my updated CV.
+Please email me for my up-to-date CV.
