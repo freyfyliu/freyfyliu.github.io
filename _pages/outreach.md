@@ -9,7 +9,7 @@ redirect_from:
 
 Writing and translating
 ----
-I am an active science writer and translator. My writing is about both advances in astronomy and my life as an astronomy researcher. I have published articles in some of the most influential medias in China, including:
+I am an active science writer and translator. My writing is about both advances in astronomy and my life as an astronomy researcher. I have published ~100 articles in some of the most influential medias in China, including:
 
 National Astronomy of China (中国国家天文), Guangming Daily (光明日报), Science World (科学世界), New Educator (新教育家), Tonight News (今晚报), Guokr (果壳网), Duzhe (读者), Youth Literary Digest (青年文摘), etc.
 
