@@ -7,7 +7,7 @@ author_profile: true
 
 First-author papers
 -----
-(3) [Dust and Cold Gas Properties of Starburst HyLIRG Quasars at z ∼ 2.5](https://iopscience.iop.org/article/10.3847/1538-4357/ad24fe)
+<p style="margin-bottom: 10px;">(3) [Dust and Cold Gas Properties of Starburst HyLIRG Quasars at z ∼ 2.5](https://iopscience.iop.org/article/10.3847/1538-4357/ad24fe)<p>
 
 **Liu, F.-Y.**, Dai, Y.~S., Omont, A., et al. 2024, ApJ, 964, 136. doi:10.3847/1538-4357/ad24fe
 
