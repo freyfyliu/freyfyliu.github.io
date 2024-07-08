@@ -17,7 +17,7 @@ I have translated several English popular science books to Chinese:
 
 2. **[Supernova](https://mitpress.mit.edu/9780262543149/supernova/) (MIT Press, 2022)** Chinese version 超新星 published by Canton Huacheng Press (广东花城出版社), expected in 2024.
 
-1. **[Is Einstein still right?](https://global.oup.com/academic/product/is-einstein-still-right-9780198842125?cc=gb&lang=en&) (Oxford Press, 2020)** Chinese version 爱因斯坦还是对的吗 published by Hunan Science and Technology Press (湖南科技出版社) in 2023.
+\1. **[Is Einstein still right?](https://global.oup.com/academic/product/is-einstein-still-right-9780198842125?cc=gb&lang=en&) (Oxford Press, 2020)** Chinese version 爱因斯坦还是对的吗 published by Hunan Science and Technology Press (湖南科技出版社) in 2023.
 
 I am also a science influencer on Chinese social platform Douban (豆瓣). More than 13K followers and 5M reads by July 2024.
 
@@ -25,7 +25,7 @@ Teaching and talks
 -----
 Introducing the amazement I feel about astronomy to others has always been enjoyable and rewarding for me. I have been to the following institutes:
 
-6. Mills Observatory, Dundee UK 2024, as a part of Winter Talks from Dundee Astronomical Society;
+\6. Mills Observatory, Dundee UK 2024, as a part of Winter Talks from Dundee Astronomical Society;
 
 5. University of Nairobi, Kenya 2024, as a part of [TARA](https://www.dara-project.org/) program;
 
