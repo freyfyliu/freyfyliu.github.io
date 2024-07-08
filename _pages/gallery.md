@@ -9,7 +9,7 @@ redirect_from:
 
 Life of a PhD student is busy but still manageable for hobbies. I like hiking, bouldering and playing table tennis with friends in my spare time.
 
-Photography connects me with mostly nature and sometimes people. I worked part-time in wild animal protection charities [Eco-Bridge Continental](https://eco-bridgecontinental.org.cn/), [Let Birds Fly](https://baike.baidu.com/item/%E8%AE%A9%E5%80%99%E9%B8%9F%E9%A3%9E/2394992) and [Shan Shui](http://en.shanshui.org/) when I was in China. I am actively looking for opportunities to participate in conservation in Scotland, through either photography (e.g., [Wiki Loves Earth](https://commons.wikimedia.org/wiki/Commons:Wiki_Loves_Earth_2024_in_Scotland)) or data analysis.
+Photography connects me with both nature (always) and people (sometimes). I volunteered as a recorder and data analyst for wild animal protection charities [Eco-Bridge Continental](https://eco-bridgecontinental.org.cn/), [Let Birds Fly](https://baike.baidu.com/item/%E8%AE%A9%E5%80%99%E9%B8%9F%E9%A3%9E/2394992) and [Shan Shui](http://en.shanshui.org/) when I was in China. I am actively looking for opportunities to participate in conservation in Scotland, through either photography (e.g., [Wiki Loves Earth](https://commons.wikimedia.org/wiki/Commons:Wiki_Loves_Earth_2024_in_Scotland)) or data analysis.
 
 <img src='/images/lake.jpg'>
 <i>At Qinghai Lake, the largest lake in China<i>
@@ -46,7 +46,7 @@ I like various genres of music, from rock to classical. My interested instrument
 <img src='/images/piano.jpg'>
 <i>Playing Haydn and Tchaikovsky on stage<i>
 
-I love traveling and my occupation gives me the advantage to visit telescope sites.
+I love traveling and my occupation gives me the advantage to visit telescope sites. Can't wait to have more photos for this section!
 
 <img src='/images/telescope.jpg'>
 <i>With 60cm telescope of Zuo Dijiang Observatory at Nanjing University<i>
