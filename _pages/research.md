@@ -26,4 +26,4 @@ Quasars are the most powerful stage in supermassive black hole evolution, and th
 
 We have used single-dish mm telescope IRMA-30m and interferometer NOEMA to observe molecular gas in samples of broad-emission-line SDSS quasars with HyLIRG-level Herschel SPIRE fluxes. Our works have confirmed that these systems are mostly unlensed and in a short transitional starburst phase. We also found velocity and spatial offsets between optical and mm observations, which may be a sign of relative motions between the nuclei and galaxies. Further study requires more state-of-the-art facilities to resolve them spatially and spectroscopically, such as ALMA and VLT.
 
-<img src='/images/hylirglense.png' width='700'>
+<img src='/images/hylirglense.png' width='800'>
