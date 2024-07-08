@@ -15,7 +15,7 @@ I enjoy taking pictures of mostly nature and sometimes people. I worked part-tim
 <i>At Qinghai Lake, the largest lake in China<i>
 
 <img src='/images/sky.jpg'>
-<i>Under the night sky of the Tibetan plateau<i>
+<i>Under the night sky of Tibetan plateau<i>
 
 <img src='/images/forest.jpg'>
 <i>In the mountains of Xinjiang, China<i>
