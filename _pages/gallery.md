@@ -7,9 +7,9 @@ redirect_from:
   - /gallery.html
 ---
 
-Life is busy, but even a PhD student can have hobbies. I like running, hiking, bouldering and playing table tennis with friends in my spare time.
+Life is busy, but even a PhD student can have hobbies. I like hiking, bouldering and playing table tennis with friends in my spare time.
 
-I enjoy taking pictures of mostly nature and sometimes people. I worked part-time in wild animal protection charities [Eco-Bridge Continental](https://eco-bridgecontinental.org.cn/), [Let Birds Fly](https://baike.baidu.com/item/%E8%AE%A9%E5%80%99%E9%B8%9F%E9%A3%9E/2394992) and [Shan Shui](http://en.shanshui.org/) when I was in China. I am actively looking for opportunities to participate in conservation in Scotland, through either photography (e.g., [Wiki Scotland Competition](https://commons.wikimedia.org/wiki/Commons:Wiki_Loves_Earth_2024_in_Scotland)) or data analysis.
+I enjoy taking pictures of mostly nature and sometimes people. I worked part-time in wild animal protection charities [Eco-Bridge Continental](https://eco-bridgecontinental.org.cn/), [Let Birds Fly](https://baike.baidu.com/item/%E8%AE%A9%E5%80%99%E9%B8%9F%E9%A3%9E/2394992) and [Shan Shui](http://en.shanshui.org/) when I was in China. I am actively looking for opportunities to participate in conservation in Scotland, through either photography (e.g., [Wiki Loves Earth](https://commons.wikimedia.org/wiki/Commons:Wiki_Loves_Earth_2024_in_Scotland)) or data analysis.
 
 <img src='/images/lake.jpg'>
 <i>At Qinghai Lake, the largest lake in China<i>
@@ -32,7 +32,24 @@ I enjoy taking pictures of mostly nature and sometimes people. I worked part-tim
 <img src='/images/DSC07395.jpg'>
 <i>Northern gannets nesting on Bass Rock, an island near Edinburgh<i>
 
+<img src='/images/swan.jpg'>
+<i>Swans hatching eggs in the pond next to the Royal Observatory of Edinburgh<i>
+
+<img src='/images/pent.jpg'>
+<i>Pentland Hills in the suburb of Edinburgh<i>
+  
+<img src='/images/cloud.jpg'>
+<i>Nacreous clouds observed in Scotland<i>
+
 I like various genres of music, from rock to classical. My interested instruments include piano, guitar and harmonica. I was the president of Linquan (林泉, "forest-spring") Piano Society at Nanjing University 2017-2018.
 
 <img src='/images/piano.jpg'>
 <i>Playing Haydn and Tchaikovsky on stage<i>
+
+I love traveling and my occupation gives me the advantage to visit telescope sites.
+
+<img src='/images/telescope.jpg'>
+<i>With 60cm telescope of Zuo Dijiang Observatory at Nanjing University<i>
+
+<img src='/images/tianma.JPG'>
+<i>With Tianma, the largest fully steerable radio telescope in China <i>
