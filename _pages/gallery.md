@@ -26,7 +26,7 @@ I enjoy taking pictures of mostly nature and sometimes people. I worked part-tim
 <img src='/images/DSC06695.jpg'>
 <i>Edinburgh city view from my office at the Royal Observatory<i>
 
-<img src='/images/fountain.jpg'>
+<img src='/images/fountain.JPG'>
 <i>Ross fountain and Edinburgh Castle<i>
 
 <img src='/images/DSC07395.jpg'>
