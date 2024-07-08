@@ -5,7 +5,7 @@ permalink: /presentations/
 author_profile: true
 ---
 
-Conference talks
+Oral talks
 -----
 (6) **The cosmic star formation history towards the Epoch of Reionization from a JWST-ALMA perspective (pending decision)**
 
