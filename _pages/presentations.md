@@ -35,7 +35,7 @@ Posters
 -----
 (2) **Dust and cold gas properties of starburst HyLIRG quasars at the Cosmic Noon**
 
-The XXXII IAU general assembly, Cape Town, South Africa, Aug 2024.
+The XXXII IAU general assembly, International Astronomy Union, Cape Town, South Africa, Aug 2024.
 
 (1) **What do millimeter observations tell us about quasars?**
 
