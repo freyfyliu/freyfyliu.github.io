@@ -7,11 +7,11 @@ author_profile: true
 
 Oral talks
 -----
-(6) **The cosmic star formation history towards the Epoch of Reionization from a JWST-ALMA perspective (pending)**
+(6) **The complete cosmic star formation history towards the Epoch of Reionization**
 
 [The 40th IAP symposium](https://iapsymposium2024.sciencesconf.org/), Institut d'Astrophysique de Paris, Paris, France, Dec 2024.
 
-(5) **Dust-obscured star formation in the young Universe revealed by combining JWST PRIMER and ALMA (pending)**
+(5) **Dust-obscured star formation in the young Universe revealed by combining JWST PRIMER and ALMA**
 
 [DEEP24](https://deep24.org/) international conference, Instituto de Astrofísica e Ciências do Espaço, Sintra, Portugal, Oct 2024.
 
