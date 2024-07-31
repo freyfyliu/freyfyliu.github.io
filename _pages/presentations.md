@@ -7,7 +7,7 @@ author_profile: true
 
 Oral talks
 -----
-(6) **The complete cosmic star formation history towards the Epoch of Reionization**
+(6) **The complete cosmic star formation history towards the Epoch of Reionization (pending)**
 
 [The 40th IAP symposium](https://iapsymposium2024.sciencesconf.org/), Institut d'Astrophysique de Paris, Paris, France, Dec 2024.
 
