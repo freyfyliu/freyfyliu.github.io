@@ -33,7 +33,7 @@ The 8th Interstellar Physics and Chemistry Seminar, Three Gorges University, Yic
 
 Posters
 -----
-(2) **Dust and cold gas properties of starburst HyLIRG quasars at the Cosmic Noon**
+(2) **Dust and cold gas properties of starburst infrared-luminous quasars at 0.5 < z < 3**
 
 The XXXII IAU general assembly, International Astronomy Union, Cape Town, South Africa, Aug 2024.
 
