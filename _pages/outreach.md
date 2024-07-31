@@ -13,13 +13,13 @@ National Astronomy of China (中国国家天文), Guangming Daily (光明日报)
 
 I translate popular science books from other languages to Chinese, including:
 
-(3) **[Loops](https://www.amazon.it/Loops-Elisa-Macellari/dp/8832738295) (Originally in Italian, Bao Publishing, 2023)** Chinese version 循环 published by Everafter Books (蒲公英童书馆), expected in 2024.
+(3) **[Loops](https://www.amazon.it/Loops-Elisa-Macellari/dp/8832738295) (originally in Italian, Bao Publishing, 2023)** Chinese version 循环 published by Everafter Books (蒲公英童书馆), expected in 2024.
 
-(2) **[Supernova](https://mitpress.mit.edu/9780262543149/supernova/) (Originally in English, MIT Press, 2022)** Chinese version 超新星 published by Canton Huacheng Press (广东花城出版社), expected in 2024.
+(2) **[Supernova](https://mitpress.mit.edu/9780262543149/supernova/) (originally in English, MIT Press, 2022)** Chinese version 超新星 published by Canton Huacheng Press (广东花城出版社), expected in 2024.
 
-(1) **[Is Einstein still right?](https://global.oup.com/academic/product/is-einstein-still-right-9780198842125?cc=gb&lang=en&) (Originally in English, Oxford Press, 2020)** Chinese version 爱因斯坦还是对的吗 published by Hunan Science and Technology Press (湖南科技出版社) in 2023.
+(1) **[Is Einstein still right?](https://global.oup.com/academic/product/is-einstein-still-right-9780198842125?cc=gb&lang=en&) (originally in English, Oxford Press, 2020)** Chinese version 爱因斯坦还是对的吗 published by Hunan Science and Technology Press (湖南科技出版社) in 2023.
 
-I am also the scientific revisor of the following translated books: 科学大爆炸：我们在太空中的位置 (贵州人民出版社, [Science Comics: Solar System: Our Place in Space](https://www.amazon.co.uk/Science-Comics-System-Rosemary-Mosco/dp/1626721416)), 揭秘星空, 仰望星空, 超越星空 (湖南科技出版社, in press).
+I am also the scientific revisor of the following translated books: 科学大爆炸：我们在太空中的位置 (贵州人民出版社, [Science Comics: Solar System: Our Place in Space](https://www.amazon.co.uk/Science-Comics-System-Rosemary-Mosco/dp/1626721416)), 揭秘星空, 仰望星空, 超越星空 (湖南科技出版社, in press, originally in Spanish).
 
 Teaching and talks
 -----
