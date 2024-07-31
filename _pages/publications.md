@@ -7,6 +7,10 @@ author_profile: true
 
 First-author papers
 -----
+(4) A Complete JWST Sample of ALMA-Detected Galaxies in PRIMER COSMOS Field: I. Cosmic Star Formation History
+
+**Liu, F.-Y.**, Dunlop, J., McLure, R., et al. in prep.
+
 (3) [Dust and Cold Gas Properties of Starburst HyLIRG Quasars at z ∼ 2.5](https://iopscience.iop.org/article/10.3847/1538-4357/ad24fe)
 
 **Liu, F.-Y.**, Dai, Y.~S., Omont, A., et al. 2024, ApJ, 964, 136. doi:10.3847/1538-4357/ad24fe
