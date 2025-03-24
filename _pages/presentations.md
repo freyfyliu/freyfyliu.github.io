@@ -7,9 +7,6 @@ author_profile: true
 
 Oral talks
 -----
-(6) **The complete cosmic star formation history towards the Epoch of Reionization (pending)**
-
-[The 40th IAP symposium](https://iapsymposium2024.sciencesconf.org/), Institut d'Astrophysique de Paris, Paris, France, Dec 2024.
 
 (5) **Dust-obscured star formation in the young Universe revealed by combining JWST PRIMER and ALMA**
 
@@ -33,6 +30,11 @@ The 8th Interstellar Physics and Chemistry Seminar, Three Gorges University, Yic
 
 Posters
 -----
+
+(3) **The complete cosmic star formation history towards the Epoch of Reionization**
+
+[The 40th IAP symposium](https://iapsymposium2024.sciencesconf.org/), Institut d'Astrophysique de Paris, Paris, France, Dec 2024.
+
 (2) **Dust and cold gas properties of starburst infrared-luminous quasars at 0.5 < z < 3**
 
 The XXXII IAU general assembly, International Astronomy Union, Cape Town, South Africa, Aug 2024.
