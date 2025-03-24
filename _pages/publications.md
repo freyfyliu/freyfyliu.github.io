@@ -7,14 +7,13 @@ author_profile: true
 
 First-author papers
 -----
-(4) A Complete JWST Sample of ALMA-Detected Galaxies in PRIMER COSMOS Field: I. Cosmic Star Formation History
+(4) [JWST PRIMER: A deep JWST study of all ALMA-detected galaxies in PRIMER COSMOS -- dust-obscured star-formation history back to z ≃ 7](https://arxiv.org/abs/2503.07774)
 
-**Liu, F.-Y.**, Dunlop, J., McLure, R., et al. in prep.
+**Liu, F.-Y.**, Dunlop, J., McLure, R., et al. arXiv:2503.07774
 
 (3) [Dust and Cold Gas Properties of Starburst HyLIRG Quasars at z ∼ 2.5](https://iopscience.iop.org/article/10.3847/1538-4357/ad24fe)
 
 **Liu, F.-Y.**, Dai, Y.~S., Omont, A., et al. 2024, ApJ, 964, 136. doi:10.3847/1538-4357/ad24fe
-
 
 (2) [富尘埃宽发射线类星体的CO发射 (CO Emission of Dust-Rich Broad-Emission-Line Quasars, published in Chinese with an English cover)](http://www.shao.cas.cn/twxjz/wzll/202304/202304yjlw/202312/P020240123566166864142.pdf)
 
