@@ -5,6 +5,8 @@ permalink: /publications/
 author_profile: true
 ---
 
+See all my published papers on [NASA ADS](https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0003-1386-3676&sort=date%20desc%2C%20bibcode%20desc&p_=0)
+
 First-author papers
 -----
 (4) [JWST PRIMER: A deep JWST study of all ALMA-detected galaxies in PRIMER COSMOS -- dust-obscured star-formation history back to z ≃ 7](https://arxiv.org/abs/2503.07774)
