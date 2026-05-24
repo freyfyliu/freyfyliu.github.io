@@ -94,7 +94,7 @@
       const W = S.W, H = S.H; if (!W || !H) return;
       const mobile = Math.min(W, H) < 520;
       const px_per_arcsec = Math.min(W, H) / FIELD_ARCSEC;
-      const density = mobile ? 27 : 48;
+      const density = mobile ? 54 : 96;
       const COUNT = Math.round(density * FIELD_ARCMIN * FIELD_ARCMIN);
 
       const lib = m.gal;
@@ -282,7 +282,18 @@
         }
       }
 
-      if (S.starLayer) { ctx.globalCompositeOperation="lighter"; ctx.globalAlpha=1; ctx.drawImage(S.starLayer,0,0); ctx.globalCompositeOperation="source-over"; }
+      if (S.starLayer) {
+        // foreground Milky-Way stars: visible only where stars actually emit
+        // (RGB/UV/optical/near-IR); hidden in X-ray, (sub)mm and radio. Blend
+        // across the band crossfade so they fade in/out smoothly.
+        const starVis = b => (b === "rgb" || b === "uv" || b === "optical" || b === "nir") ? 1 : 0;
+        const sa = starVis(BAND_KEYS[idx]) * (1 - frac) + starVis(BAND_KEYS[nextIdx]) * frac;
+        if (sa > 0.001) {
+          ctx.globalCompositeOperation = "lighter"; ctx.globalAlpha = sa;
+          ctx.drawImage(S.starLayer, 0, 0);
+          ctx.globalAlpha = 1; ctx.globalCompositeOperation = "source-over";
+        }
+      }
 
       const nm = BAND_LABEL[BAND_KEYS[activeBand]];
       if (label.textContent !== nm) label.textContent = nm;
