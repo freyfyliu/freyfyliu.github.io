@@ -31,3 +31,10 @@ Keep the same filenames if you want the pages to update without editing HTML.
 - Lightweight script: `assets/js/main.js`
 
 No build step is required.
+
+
+## CV page
+
+The homepage now includes a `CV` link. It opens `pages/cv.html`, where the left panel contains a short CV overview and the right panel embeds the PDF at `assets/pdf/CV_Frey_Liu.pdf`.
+
+To update the CV, replace `assets/pdf/CV_Frey_Liu.pdf` with a new PDF using the same filename.
