@@ -88,7 +88,7 @@
       const W = S.W, H = S.H; if (!W || !H) return;
       const mobile = Math.min(W, H) < 520;
       const px_per_arcsec = Math.min(W, H) / FIELD_ARCSEC;
-      const density = mobile ? 9 : 16;
+      const density = mobile ? 27 : 48;
       const COUNT = Math.round(density * FIELD_ARCMIN * FIELD_ARCMIN);
 
       const lib = m.gal;
@@ -167,7 +167,14 @@
         gg.restore();
       }
       gg.globalCompositeOperation = "source-over";
-      if (beamPx) { g.filter = `blur(${beamPx.toFixed(1)}px)`; g.drawImage(tmp,0,0); g.filter="none"; }
+      if (beamPx) {
+        g.filter = `blur(${beamPx.toFixed(1)}px)`;
+        g.globalCompositeOperation = "lighter";
+        g.drawImage(tmp, 0, 0);
+        g.drawImage(tmp, 0, 0);   // 2x brightness for (sub)mm — it was too faint
+        g.globalCompositeOperation = "source-over";
+        g.filter = "none";
+      }
       S.bandLayers[band] = cv;
       S.bandData[band] = g.getImageData(0,0,W,H);
     }
