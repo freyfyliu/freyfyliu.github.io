@@ -94,7 +94,7 @@
       const W = S.W, H = S.H; if (!W || !H) return;
       const mobile = Math.min(W, H) < 520;
       const px_per_arcsec = Math.min(W, H) / FIELD_ARCSEC;
-      const density = mobile ? 54 : 96;
+      const density = mobile ? 108 : 192;
       const COUNT = Math.round(density * FIELD_ARCMIN * FIELD_ARCMIN);
 
       const lib = m.gal;
