@@ -12,14 +12,13 @@
 (function () {
   const BAND_KEYS = ["xray", "uv", "optical", "nir", "dust", "radio"];
   const BAND_LABEL = { xray: "X Ray", uv: "UV", optical: "Optical", nir: "Infrared", dust: "(Sub)Millimetre", radio: "Radio" };
-  const DWELL = 5000, FADE = 1200;
+  const DWELL = 8000, FADE = 1400;
   const FIELD_ARCMIN = 2.22, FIELD_ARCSEC = FIELD_ARCMIN * 60;
   const FIRST_BAND = "optical";   // band shown first / loaded first
   const clamp = (v, lo, hi) => (v < lo ? lo : v > hi ? hi : v);
 
-  // n(z): cosmic-noon-peaked (~3x at z~2, ~half at z0.5, low at z6.5)
-  function targetNz(z) { const t = Math.log((z + 0.4) / 2.0); return 0.4 + 3.0 * Math.exp(-(t * t) / (2 * 0.55 * 0.55)); }
-  function interactProb(z) { const t = Math.log((z + 0.4) / 2.0); return 0.05 * (1 + 2 * Math.exp(-(t * t) / (2 * 0.55 * 0.55))); }
+  // close-pair (interaction) probability — fixed (no redshift weighting)
+  const INTERACT_PROB = 0.07;
 
   // arrow-cursor lens silhouette + dense SIS components
   const CURSOR_PTS = [[0.02,0.02],[0.02,0.78],[0.20,0.60],[0.31,0.86],[0.42,0.82],[0.31,0.56],[0.56,0.56]];
@@ -93,9 +92,15 @@
       const COUNT = Math.round(density * FIELD_ARCMIN * FIELD_ARCMIN);
 
       const lib = m.gal;
-      const weights = lib.map(g => g.z == null ? 0.4 : targetNz(g.z));
-      const wsum = weights.reduce((a, b) => a + b, 0);
-      const pick = () => { let r = Math.random() * wsum; for (let i=0;i<lib.length;i++){r-=weights[i];if(r<=0)return i;} return lib.length-1; };
+      // The catalogue was brightness-selected (faint galaxies under-counted).
+      // Correct toward reality: up-weight fainter galaxies, ramping from 1x for the
+      // brightest (largest angular size) to 3x for the faintest. No n(z) re-weighting.
+      const order = lib.map((g, i) => [i, g.ar]).sort((a, b) => b[1] - a[1]); // bright -> faint
+      const weights = new Float64Array(lib.length);
+      const denom = Math.max(1, lib.length - 1);
+      order.forEach((o, rank) => { weights[o[0]] = 1 + 2 * (rank / denom); });   // 1 .. 3
+      let wsum = 0; for (let i = 0; i < weights.length; i++) wsum += weights[i];
+      const pick = () => { let r = Math.random() * wsum; for (let i = 0; i < lib.length; i++) { r -= weights[i]; if (r <= 0) return i; } return lib.length - 1; };
 
       const placed = [];
       for (let n = 0; n < COUNT; n++) {
@@ -103,8 +108,7 @@
         const x = Math.random()*W, y = Math.random()*H;
         const arPx = clamp(g.ar * px_per_arcsec, 3, Math.min(W,H)*0.5);
         placed.push({ gi, x, y, size: arPx, rot: Math.random()*Math.PI, z: g.z == null ? 1.0 : g.z });
-        const zz = g.z == null ? 1.0 : g.z;
-        if (Math.random() < interactProb(zz)) {
+        if (Math.random() < INTERACT_PROB) {
           const gj = pick(), g2 = lib[gj];
           const ar2 = clamp(g2.ar*px_per_arcsec, 3, Math.min(W,H)*0.4);
           placed.push({ gi: gj, x: x+(Math.random()-0.5)*arPx*1.6, y: y+(Math.random()-0.5)*arPx*1.6, size: ar2, rot: Math.random()*Math.PI, z: g2.z == null ? 1.0 : g2.z });
@@ -124,12 +128,12 @@
       // foreground Milky-Way stars (sparse, grey-white, never lensed)
       const sc = document.createElement("canvas"); sc.width=W; sc.height=H;
       const s = sc.getContext("2d"); s.globalCompositeOperation="lighter";
-      const nStars = Math.floor(W*H/(mobile?10000:6700));
+      const nStars = Math.floor(W*H/(mobile?100000:67000));
       for (let i=0;i<nStars;i++){const x=Math.random()*W,y=Math.random()*H,mag=Math.random();
         const r=mag<0.93?0.4+Math.random()*0.9:1.2+Math.random()*1.7,a=0.22+mag*0.6,gw=205+Math.random()*35;
         const gr=s.createRadialGradient(x,y,0,x,y,r*2.4); gr.addColorStop(0,`rgba(${gw},${gw+10},${gw+18},${a})`); gr.addColorStop(1,"rgba(255,255,255,0)");
         s.fillStyle=gr; s.beginPath(); s.arc(x,y,r*2.4,0,Math.PI*2); s.fill(); }
-      for (let i=0;i<(mobile?1:2);i++){const x=Math.random()*W,y=Math.random()*H,sz=1.5+Math.random()*2.2;
+      for (let i=0;i<(mobile?0:(Math.random()<0.4?1:0));i++){const x=Math.random()*W,y=Math.random()*H,sz=1.5+Math.random()*2.2;
         const gr=s.createRadialGradient(x,y,0,x,y,sz*5); gr.addColorStop(0,"rgba(235,238,247,0.95)"); gr.addColorStop(0.5,"rgba(210,216,230,0.3)"); gr.addColorStop(1,"rgba(255,255,255,0)");
         s.fillStyle=gr; s.beginPath(); s.arc(x,y,sz*5,0,Math.PI*2); s.fill();
         s.strokeStyle="rgba(225,230,242,0.5)"; s.lineWidth=0.8;
@@ -171,7 +175,7 @@
     // ---------- resize ----------
     function resize() {
       const r = container.getBoundingClientRect();
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
       S.dpr = dpr; S.W = Math.max(2, Math.round(r.width*dpr)); S.H = Math.max(2, Math.round(r.height*dpr));
       canvas.width = S.W; canvas.height = S.H;
       S.bandLayers = {}; S.bandData = {};
@@ -200,7 +204,7 @@
       const m = S.mouse;
       if (m.active && S.bandData[BAND_KEYS[activeBand]]) {
         const src = S.bandData[BAND_KEYS[activeBand]].data;
-        const L = Math.min(W,H)*0.17*m.scale, step = W<1200?3:2, pad = L*4.2;
+        const L = Math.min(W,H)*0.17*m.scale, step = 2, pad = L*4.2;
         const x0=clamp((m.x-pad)|0,0,W-1),x1=clamp((m.x+pad)|0,0,W-1),y0=clamp((m.y-pad)|0,0,H-1),y1=clamp((m.y+pad)|0,0,H-1);
         const bw=x1-x0+1,bh=y1-y0+1;
         if (bw>1 && bh>1) {
@@ -223,18 +227,20 @@
           for(let py=y0;py<=y1;py+=step)for(let px=x0;px<=x1;px+=step){
             const d=fetchD(px-m.x,py-m.y); const zwt=0.12+0.88*(zw[py*W+px]||0);
             let dax=d[0]*zwt,day=d[1]*zwt; const dlen=Math.sqrt(dax*dax+day*day),dcap=L*3.0; if(dlen>dcap){const f=dcap/dlen;dax*=f;day*=f;}
-            const c=sample(px-dax,py-day);
             const det=(1-zwt*d[2])*(1-zwt*d[5])-(zwt*d[3])*(zwt*d[4]); const mu=clamp(1/Math.max(Math.abs(det),0.001),0.25,6.0);
+            const bx=px-dax, by=py-day;
+            let c;
+            if (mu > 1.6) {                              // soften aliasing where strongly magnified
+              const o = 0.55 * (mu - 1);                 // source-space jitter grows with magnification
+              const a0=sample(bx,by), a1=sample(bx+o,by), a2=sample(bx-o,by), a3=sample(bx,by+o), a4=sample(bx,by-o);
+              c=[(a0[0]*2+a1[0]+a2[0]+a3[0]+a4[0])/6,(a0[1]*2+a1[1]+a2[1]+a3[1]+a4[1])/6,(a0[2]*2+a1[2]+a2[2]+a3[2]+a4[2])/6];
+            } else c=sample(bx,by);
             const bi=(py*W+px)*4; const edge=clamp(1-(Math.max(Math.abs(px-m.x),Math.abs(py-m.y))-pad*0.78)/(pad*0.22),0,1);
             const cr=src[bi]*(1-edge)+clamp(c[0]*mu,0,255)*edge, cg=src[bi+1]*(1-edge)+clamp(c[1]*mu,0,255)*edge, cb=src[bi+2]*(1-edge)+clamp(c[2]*mu,0,255)*edge;
             for(let sy=0;sy<step;sy++)for(let sx=0;sx<step;sx++){const ox=px-x0+sx,oy=py-y0+sy;if(ox>=bw||oy>=bh)continue;const oi=(oy*bw+ox)*4;od[oi]=cr;od[oi+1]=cg;od[oi+2]=cb;od[oi+3]=255;}
           }
           ctx.putImageData(out,x0,y0);
         }
-        // solid mass-distribution outline
-        ctx.save(); ctx.beginPath();
-        for(let i=0;i<CURSOR_PTS.length;i++){const sx=m.x+(CURSOR_PTS[i][0]-0.25)*L,sy=m.y+(CURSOR_PTS[i][1]-0.42)*L;i?ctx.lineTo(sx,sy):ctx.moveTo(sx,sy);}
-        ctx.closePath(); ctx.lineWidth=1.2*S.dpr; ctx.strokeStyle="rgba(185,185,190,0.55)"; ctx.stroke(); ctx.restore();
       }
 
       if (S.starLayer) { ctx.globalCompositeOperation="lighter"; ctx.globalAlpha=1; ctx.drawImage(S.starLayer,0,0); ctx.globalCompositeOperation="source-over"; }
