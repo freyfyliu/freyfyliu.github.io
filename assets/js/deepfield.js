@@ -10,11 +10,14 @@
  * Expects: <base>/manifest.json and <base>/atlas_<band>_<page>.png
  */
 (function () {
-  const BAND_KEYS = ["xray", "uv", "optical", "nir", "dust", "radio"];
-  const BAND_LABEL = { xray: "X Ray", uv: "UV", optical: "Optical", nir: "Infrared", dust: "(Sub)Millimetre", radio: "Radio" };
+  const BAND_KEYS = ["rgb", "xray", "uv", "optical", "nir", "dust", "radio"];
+  const BAND_LABEL = { rgb: "RGB", xray: "X Ray", uv: "UV", optical: "Optical", nir: "Infrared", dust: "(Sub)Millimetre", radio: "Radio" };
+  const RGB_SRC = { r: "nir", g: "optical", b: "uv" };   // false-colour: R=F444W, G=F277W, B=F115W
+  const ATLAS_BANDS = ["xray", "uv", "optical", "nir", "dust", "radio"];   // real bands with PNG atlases
   const DWELL = 8000, FADE = 1400;
   const FIELD_ARCMIN = 2.22, FIELD_ARCSEC = FIELD_ARCMIN * 60;
-  const FIRST_BAND = "optical";   // band shown first / loaded first
+  const FIRST_BAND = "rgb";        // shown first on load (needs uv+optical+nir)
+  const FIRST_LOAD = ["nir", "optical", "uv"];   // load these first so RGB can composite
   const clamp = (v, lo, hi) => (v < lo ? lo : v > hi ? hi : v);
 
   // close-pair (interaction) probability — fixed (no redshift weighting)
@@ -71,16 +74,19 @@
         img.src = base + `atlas_${band}_${p}.png`;
         pages.push(img); proms.push(pr);
       }
-      rec.promise = Promise.all(proms).then(() => { rec.loaded = true; if (S.built) compositeBand(band); });
+      rec.promise = Promise.all(proms).then(() => { rec.loaded = true; if (S.built) { compositeBand(band); maybeCompositeRGB(); } });
       S.atlas[band] = rec;
       return rec.promise;
     }
 
     fetch(base + "manifest.json").then(r => r.json()).then(m => {
       S.manifest = m;
-      loadBand(FIRST_BAND).then(() => { resize(); startLoop(); preloadRest(); });
+      Promise.all(FIRST_LOAD.map(loadBand)).then(() => { resize(); startLoop(); preloadRest(); });
     });
-    function preloadRest() { BAND_KEYS.forEach(b => { if (b !== FIRST_BAND) loadBand(b); }); }
+    function preloadRest() { ATLAS_BANDS.forEach(b => { if (!S.atlas[b]) loadBand(b); }); }
+    function maybeCompositeRGB() {
+      if (FIRST_LOAD.every(b => S.bandLayers[b])) compositeRGB();
+    }
 
     // ---------- build field (sampling) ----------
     function buildField() {
@@ -141,8 +147,30 @@
       s.globalCompositeOperation="source-over"; S.starLayer = sc;
 
       S.lensLUT = null; S.built = true;
-      // composite whatever bands are already loaded
-      BAND_KEYS.forEach(b => { if (S.atlas[b] && S.atlas[b].loaded) compositeBand(b); });
+      // composite whatever real bands are already loaded, then the RGB layer
+      ATLAS_BANDS.forEach(b => { if (S.atlas[b] && S.atlas[b].loaded) compositeBand(b); });
+      maybeCompositeRGB();
+    }
+
+    // ---------- composite the false-colour RGB layer from the 3 grayscale bands ----------
+    function compositeRGB() {
+      const W = S.W, H = S.H;
+      const Rl = S.bandData[RGB_SRC.r], Gl = S.bandData[RGB_SRC.g], Bl = S.bandData[RGB_SRC.b];
+      if (!Rl || !Gl || !Bl || !W) return;
+      const cv = document.createElement("canvas"); cv.width = W; cv.height = H;
+      const gctx = cv.getContext("2d");
+      const out = gctx.createImageData(W, H), od = out.data;
+      const R = Rl.data, G = Gl.data, B = Bl.data;
+      for (let i = 0; i < W * H; i++) {
+        const j = i * 4;
+        od[j] = R[j];        // red   <- near-IR intensity (grayscale layers have R=G=B)
+        od[j+1] = G[j+1];    // green <- optical
+        od[j+2] = B[j+2];    // blue  <- UV
+        od[j+3] = 255;
+      }
+      gctx.putImageData(out, 0, 0);
+      S.bandLayers.rgb = cv;
+      S.bandData.rgb = out;   // so the lens can sample/magnify the RGB image too
     }
 
     // ---------- composite one band's field layer ----------
@@ -153,7 +181,10 @@
       const cv = document.createElement("canvas"); cv.width=W; cv.height=H;
       const g = cv.getContext("2d");
       g.fillStyle="#000004"; g.fillRect(0,0,W,H);
-      const beamPx = band === "dust" ? Math.max(1, 1.0 * px_per_arcsec) : 0;   // ALMA-like 1" beam
+      // beam convolution applied on the composited field (room to spread):
+      // (sub)mm ~1" (ALMA-like), radio ~5" (so emission grows beyond each source)
+      const beamArcsec = band === "dust" ? 1.0 : band === "radio" ? 5.0 : 0;
+      const beamPx = beamArcsec ? Math.max(1, beamArcsec * px_per_arcsec) : 0;
       const tmp = beamPx ? document.createElement("canvas") : null;
       const gg = beamPx ? (tmp.width=W, tmp.height=H, tmp.getContext("2d")) : g;
       gg.globalCompositeOperation = "lighter";
@@ -171,7 +202,8 @@
         g.filter = `blur(${beamPx.toFixed(1)}px)`;
         g.globalCompositeOperation = "lighter";
         g.drawImage(tmp, 0, 0);
-        g.drawImage(tmp, 0, 0);   // 2x brightness for (sub)mm — it was too faint
+        if (band === "dust") g.drawImage(tmp, 0, 0);   // 2x brightness for (sub)mm
+        if (band === "radio") g.drawImage(tmp, 0, 0);  // beam dims radio a lot; restore
         g.globalCompositeOperation = "source-over";
         g.filter = "none";
       }
