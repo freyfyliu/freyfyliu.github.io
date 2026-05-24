@@ -1,40 +1,36 @@
-# Feng-Yuan "Frey" Liu — GitHub Pages website
+# Feng-Yuan Frey Liu — GitHub Pages website
 
-This is a static personal website package designed for `https://freyfyliu.github.io/`.
+This is a static GitHub Pages site redesigned from the provided double-column layout.
 
-## How to publish
+## Publish
 
 1. Unzip this package.
-2. Copy all files inside `frey-portfolio-site/` into the root of the `freyfyliu.github.io` repository.
-3. Commit and push to GitHub.
-4. In the repository settings, enable GitHub Pages from the main branch/root if it is not already enabled.
+2. Copy the contents inside `freyfyliu.github.io-redesign/` into the root of your `freyfyliu.github.io` repository.
+3. Commit and push to `main`.
+4. In GitHub, check **Settings → Pages**:
+   - Source: Deploy from a branch
+   - Branch: main
+   - Folder: /root
 
-## Replace placeholder images
+## Structure
 
-The current images are monochrome placeholders in `assets/img/`.
+- `index.html` keeps the interactive deep-field homepage image.
+- `pages/cv.html` embeds `assets/pdf/CV_Frey_Liu.pdf` in the right-hand column.
+- `pages/thistle.html`, `pages/gallery.html`, and `pages/students.html` are example subpages.
+- Most placeholder links point to `404.html`.
+- Image placeholders are stored in `assets/img/`.
 
-Suggested replacements:
-- `Freystandingbeforeatelescope.jpg`
-- `ALMAcontinuumfieldplaceholder.jpg`
-- `JWSTdeepfieldplaceholder.jpg`
-- `NOEMAcontrolroomplaceholder.jpg`
-- `CosmosDustMapplaceholder.jpg`
-- `LaSillaNightplaceholder.jpg`
+## Updating content
 
-Keep the same filenames if you want the pages to update without editing HTML.
+Replace placeholder images while keeping the filenames, for example:
 
-## Edit content
+- `assets/img/img_thistle.jpg`
+- `assets/img/img0.jpg`
+- `assets/img/img1.jpg`
+- `assets/img/img2.jpg`
+- `assets/img/img3.jpg`
+- `assets/img/img404.jpg`
 
-- Main page: `index.html`
-- Individual pages: `pages/*.html`
-- Styles: `assets/css/styles.css`
-- Lightweight script: `assets/js/main.js`
+Replace the CV PDF at:
 
-No build step is required.
-
-
-## CV page
-
-The homepage now includes a `CV` link. It opens `pages/cv.html`, where the left panel contains a short CV overview and the right panel embeds the PDF at `assets/pdf/CV_Frey_Liu.pdf`.
-
-To update the CV, replace `assets/pdf/CV_Frey_Liu.pdf` with a new PDF using the same filename.
+- `assets/pdf/CV_Frey_Liu.pdf`
