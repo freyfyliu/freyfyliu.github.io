@@ -182,8 +182,8 @@
       const g = cv.getContext("2d");
       g.fillStyle="#000004"; g.fillRect(0,0,W,H);
       // beam convolution applied on the composited field (room to spread):
-      // (sub)mm ~1" (ALMA-like), radio ~5" (so emission grows beyond each source)
-      const beamArcsec = band === "dust" ? 1.0 : band === "radio" ? 5.0 : 0;
+      // (sub)mm ~1" (ALMA-like), radio ~3" (so emission grows beyond each source)
+      const beamArcsec = band === "dust" ? 1.0 : band === "radio" ? 3.0 : 0;
       const beamPx = beamArcsec ? Math.max(1, beamArcsec * px_per_arcsec) : 0;
       const tmp = beamPx ? document.createElement("canvas") : null;
       const gg = beamPx ? (tmp.width=W, tmp.height=H, tmp.getContext("2d")) : g;
@@ -198,17 +198,21 @@
         gg.restore();
       }
       gg.globalCompositeOperation = "source-over";
-      if (beamPx) {
-        g.filter = `blur(${beamPx.toFixed(1)}px)`;
-        g.globalCompositeOperation = "lighter";
-        g.drawImage(tmp, 0, 0);
-        if (band === "dust") g.drawImage(tmp, 0, 0);   // 2x brightness for (sub)mm
-        if (band === "radio") g.drawImage(tmp, 0, 0);  // beam dims radio a lot; restore
-        g.globalCompositeOperation = "source-over";
-        g.filter = "none";
+      if (beamPx) { g.filter = `blur(${beamPx.toFixed(1)}px)`; g.drawImage(tmp, 0, 0); g.filter = "none"; }
+      // per-band brightness boost (beam dims these; restore above the background floor)
+      const boost = band === "dust" ? 2.0 : band === "radio" ? 8.0 : 1.0;
+      const img = g.getImageData(0,0,W,H);
+      if (boost !== 1.0) {
+        const d = img.data, BG = [0,0,4];
+        for (let i=0;i<d.length;i+=4){
+          d[i]   = clamp(BG[0]+(d[i]  -BG[0])*boost,0,255);
+          d[i+1] = clamp(BG[1]+(d[i+1]-BG[1])*boost,0,255);
+          d[i+2] = clamp(BG[2]+(d[i+2]-BG[2])*boost,0,255);
+        }
+        g.putImageData(img,0,0);
       }
       S.bandLayers[band] = cv;
-      S.bandData[band] = g.getImageData(0,0,W,H);
+      S.bandData[band] = img;
     }
 
     // ---------- resize ----------
@@ -275,7 +279,11 @@
               c=[(a0[0]*2+a1[0]+a2[0]+a3[0]+a4[0])/6,(a0[1]*2+a1[1]+a2[1]+a3[1]+a4[1])/6,(a0[2]*2+a1[2]+a2[2]+a3[2]+a4[2])/6];
             } else c=sample(bx,by);
             const bi=(py*W+px)*4; const edge=clamp(1-(Math.max(Math.abs(px-m.x),Math.abs(py-m.y))-pad*0.78)/(pad*0.22),0,1);
-            const cr=src[bi]*(1-edge)+clamp(c[0]*mu,0,255)*edge, cg=src[bi+1]*(1-edge)+clamp(c[1]*mu,0,255)*edge, cb=src[bi+2]*(1-edge)+clamp(c[2]*mu,0,255)*edge;
+            // magnify only the flux ABOVE the sky background (BG); the sky itself
+            // isn't lensed, so demagnified empty regions stay at BG instead of going black.
+            const BR=0,BG_=0,BB=4;
+            const lr=BR+(c[0]-BR)*mu, lg=BG_+(c[1]-BG_)*mu, lb=BB+(c[2]-BB)*mu;
+            const cr=src[bi]*(1-edge)+clamp(lr,0,255)*edge, cg=src[bi+1]*(1-edge)+clamp(lg,0,255)*edge, cb=src[bi+2]*(1-edge)+clamp(lb,0,255)*edge;
             for(let sy=0;sy<step;sy++)for(let sx=0;sx<step;sx++){const ox=px-x0+sx,oy=py-y0+sy;if(ox>=bw||oy>=bh)continue;const oi=(oy*bw+ox)*4;od[oi]=cr;od[oi+1]=cg;od[oi+2]=cb;od[oi+3]=255;}
           }
           ctx.putImageData(out,x0,y0);
