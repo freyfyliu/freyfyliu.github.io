@@ -64,11 +64,12 @@
       </nav>
     </section>
 
-    <aside class="image-panel" aria-label="Placeholder image">
-      <img src="assets/img/Freystandingbeforeatelescope.jpg" alt="Abstract monochrome placeholder for Frey standing before a telescope">
-    </aside>
-    <div class="image-caption">Freystandingbeforeatelescope.jpg</div>
+    <aside id="deepfield" class="image-panel" aria-label="Interactive JWST deep field"></aside>
   </main>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/deepfield.js"></script>
+  <script>
+    DeepField.mount(document.getElementById('deepfield'), { base: 'assets/img/deepfield/' });
+  </script>
 </body>
 </html>
