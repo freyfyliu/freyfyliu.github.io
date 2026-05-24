@@ -94,7 +94,7 @@
       const W = S.W, H = S.H; if (!W || !H) return;
       const mobile = Math.min(W, H) < 520;
       const px_per_arcsec = Math.min(W, H) / FIELD_ARCSEC;
-      const density = mobile ? 108 : 192;
+      const density = mobile ? 54 : 96;
       const COUNT = Math.round(density * FIELD_ARCMIN * FIELD_ARCMIN);
 
       const lib = m.gal;
@@ -199,15 +199,26 @@
       }
       gg.globalCompositeOperation = "source-over";
       if (beamPx) { g.filter = `blur(${beamPx.toFixed(1)}px)`; g.drawImage(tmp, 0, 0); g.filter = "none"; }
-      // per-band brightness boost (beam dims these; restore above the background floor)
-      const boost = band === "dust" ? 2.0 : band === "radio" ? 8.0 : 1.0;
       const img = g.getImageData(0,0,W,H);
-      if (boost !== 1.0) {
-        const d = img.data, BG = [0,0,4];
+      // (sub)mm + radio: the beam spreads a faint halo. A flat boost lights that halo
+      // up and the source looks huge. Instead use a power-law boost: normalise to the
+      // peak, raise to gamma>1 (faint tails fall off fast, bright cores stay bright),
+      // then scale back up. Smooth everywhere — compacts the halo with no hard edge.
+      if (band === "dust" || band === "radio") {
+        const d = img.data, BGv = 4;
+        const gamma = band === "dust" ? 2.0 : 2.6;     // higher -> tails suppressed more
+        const boost = band === "dust" ? 3.0 : 9.0;     // core brightness after shaping
+        let pk = 0; for (let i=1;i<d.length;i+=4){ const v=d[i]-BGv; if(v>pk)pk=v; }
+        pk = Math.max(pk, 1);
         for (let i=0;i<d.length;i+=4){
-          d[i]   = clamp(BG[0]+(d[i]  -BG[0])*boost,0,255);
-          d[i+1] = clamp(BG[1]+(d[i+1]-BG[1])*boost,0,255);
-          d[i+2] = clamp(BG[2]+(d[i+2]-BG[2])*boost,0,255);
+          const v = d[i+1] - BGv;                       // source flux above sky
+          let o = BGv;
+          if (v > 0) {
+            const n = v / pk;                           // 0..1
+            o = BGv + pk * Math.pow(n, gamma) * boost;  // bright^~unchanged, faint^suppressed
+          }
+          o = clamp(o, 0, 255);
+          d[i]=o; d[i+1]=o; d[i+2]=o; d[i+3]=255;        // keep grayscale
         }
         g.putImageData(img,0,0);
       }
