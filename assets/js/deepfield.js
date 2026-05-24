@@ -270,7 +270,7 @@
           for(let py=y0;py<=y1;py+=step)for(let px=x0;px<=x1;px+=step){
             const d=fetchD(px-m.x,py-m.y); const zwt=0.12+0.88*(zw[py*W+px]||0);
             let dax=d[0]*zwt,day=d[1]*zwt; const dlen=Math.sqrt(dax*dax+day*day),dcap=L*3.0; if(dlen>dcap){const f=dcap/dlen;dax*=f;day*=f;}
-            const det=(1-zwt*d[2])*(1-zwt*d[5])-(zwt*d[3])*(zwt*d[4]); const mu=clamp(1/Math.max(Math.abs(det),0.001),0.25,6.0);
+            const det=(1-zwt*d[2])*(1-zwt*d[5])-(zwt*d[3])*(zwt*d[4]); const mu=clamp(1/Math.max(Math.abs(det),0.001),0.65,6.0);
             const bx=px-dax, by=py-day;
             let c;
             if (mu > 1.6) {                              // soften aliasing where strongly magnified
