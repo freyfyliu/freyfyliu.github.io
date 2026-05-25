@@ -16,6 +16,7 @@
   const ATLAS_BANDS = ["xray", "uv", "optical", "nir", "dust", "radio"];   // real bands with PNG atlases
   const DWELL = 8000, FADE = 1400;
   const FIELD_ARCMIN = 2.22, FIELD_ARCSEC = FIELD_ARCMIN * 60;
+  const FIELD_ZOOM = 1.5;   // crop-zoom in so the field fills the window (no sparse voids)
   const FIRST_BAND = "rgb";        // shown first on load (needs uv+optical+nir)
   const FIRST_LOAD = ["nir", "optical", "uv"];   // load these first so RGB can composite
   const clamp = (v, lo, hi) => (v < lo ? lo : v > hi ? hi : v);
@@ -45,7 +46,7 @@
     canvas.style.cssText = "position:absolute;inset:0;width:100%;height:100%;display:block;cursor:none;background:#000004;";
     container.appendChild(canvas);
     const label = document.createElement("div");
-    label.style.cssText = "position:absolute;bottom:18px;right:20px;z-index:3;pointer-events:none;font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:300;font-size:11px;letter-spacing:2.5px;color:#8a92a2;text-transform:uppercase;";
+    label.style.cssText = "position:absolute;top:16px;left:18px;z-index:3;pointer-events:none;font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:300;font-size:11px;letter-spacing:2.5px;color:#8a92a2;text-transform:uppercase;";
     label.textContent = BAND_LABEL[FIRST_BAND];
     container.appendChild(label);
     const ctx = canvas.getContext("2d");
@@ -93,7 +94,7 @@
       const m = S.manifest; if (!m) return;
       const W = S.W, H = S.H; if (!W || !H) return;
       const mobile = Math.min(W, H) < 520;
-      const px_per_arcsec = Math.min(W, H) / FIELD_ARCSEC;
+      const px_per_arcsec = Math.min(W, H) / FIELD_ARCSEC * FIELD_ZOOM;
       const density = mobile ? 54 : 96;
       const COUNT = Math.round(density * FIELD_ARCMIN * FIELD_ARCMIN);
 
@@ -176,7 +177,7 @@
     // ---------- composite one band's field layer ----------
     function compositeBand(band) {
       const m = S.manifest, W = S.W, H = S.H; if (!S.placed || !W) return;
-      const px_per_arcsec = Math.min(W, H) / FIELD_ARCSEC;
+      const px_per_arcsec = Math.min(W, H) / FIELD_ARCSEC * FIELD_ZOOM;
       const cell = m.cell, cols = m.cols, pages = S.atlas[band].pages;
       const cv = document.createElement("canvas"); cv.width=W; cv.height=H;
       const g = cv.getContext("2d");

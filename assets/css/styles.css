@@ -1,329 +1,212 @@
 /* ==========================================================================
-   Feng-Yuan "Frey" Liu — personal academic site
-   Two-column "left master / right detail" layout per the design spec.
-     · Home view  : both columns belong to ONE document → they scroll together.
-     · Sub-page   : left + right are two fixed panes → they scroll independently.
-   Background pure white, all ink at ~90% black.
+   Feng-Yuan "Frey" Liu — personal site
+   Flat, archival, monospace. Two fixed columns, both scrolling INVISIBLY:
+     · Home     — left = content (scrolls), right = interactive field (fills window).
+     · Sub-page — left = content (scrolls), right = detail (scrolls) — independent.
+   Pure white background, ink at ~90% black. Links are marked by an UNDERLINE,
+   never by colour. No rules, no dividers, no display flourishes.
    ========================================================================== */
 
 :root {
-  /* The right-hand panel is 61.11% of the page; the left takes the rest. */
   --right-w: 61.11vw;
   --left-w: 38.89vw;
 
-  --paper: #ffffff;            /* pure white */
-  --ink: #1a1a1a;              /* 90% black  */
-  --ink-soft: #4a4a4a;
-  --muted: #8a8a8a;
-  --line: rgba(26, 26, 26, 0.14);
-  --line-strong: rgba(26, 26, 26, 0.28);
-  --link: #2f6f95;
-  --link-hover: #16455f;
-  --accent: #2f6f95;
+  --paper: #ffffff;
+  --ink: #1a1a1a;            /* 90% black */
+  --muted: #8c8c8c;
 
-  --serif: "Newsreader", Georgia, "Times New Roman", serif;
-  --display: "Fraunces", Georgia, serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas,
+          "Noto Sans SC", "PingFang SC", "Hiragino Sans GB",
+          "Microsoft YaHei", monospace;
 
-  --pad-y: clamp(2rem, 4.2vh, 3.4rem);
-  --pad-x: clamp(1.4rem, 3.4vw, 3.4rem);
+  --pad-y: 2.4rem;
+  --pad-x: clamp(1.5rem, 3.6vw, 3.4rem);
 }
 
 * { box-sizing: border-box; }
 
-html { font-size: 17px; -webkit-text-size-adjust: 100%; }
+html { font-size: 13.5px; -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--serif);
-  font-weight: 380;
-  line-height: 1.5;
+  font-family: var(--mono);
+  font-weight: 400;
+  line-height: 1.72;
   letter-spacing: 0.005em;
-  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow: hidden;                       /* the panes own the scroll */
 }
 
+/* Links: underline only, same ink colour as the text. */
 a {
-  color: var(--link);
-  text-decoration: none;
-  text-underline-offset: 0.16em;
-  text-decoration-thickness: from-font;
-  transition: color 0.18s ease;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
 }
-a:hover, a:focus-visible { color: var(--link-hover); text-decoration: underline; }
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+a:hover, a:focus-visible { opacity: 0.55; }
+:focus-visible { outline: 1px solid var(--ink); outline-offset: 3px; }
 
 /* --------------------------------------------------------------------------
-   Shell
+   Shell + the two fixed panes (invisible scrollbars)
    -------------------------------------------------------------------------- */
-.shell { display: flex; align-items: stretch; min-height: 100vh; }
+.shell { min-height: 100vh; }
 
-/* LEFT — persistent home content ("master" column) */
-.master {
-  width: var(--left-w);
-  flex: 0 0 var(--left-w);
-  padding: var(--pad-y) var(--pad-x) calc(var(--pad-y) * 1.4);
-  border-right: 1px solid var(--line);
+.master, .detail {
+  position: fixed; top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;                  /* Firefox */
+  -ms-overflow-style: none;               /* old Edge/IE */
 }
-.master-inner { max-width: 30rem; margin: 0 auto; }
+.master::-webkit-scrollbar,
+.detail::-webkit-scrollbar { width: 0; height: 0; display: none; }
 
-/* RIGHT — interactive image (home) */
+.master {
+  left: 0;
+  width: var(--left-w);
+  padding: var(--pad-y) var(--pad-x) 3rem;
+  z-index: 2;
+}
+.master-inner { max-width: 30rem; }
+
+/* Right pane — interactive field (home). Fills the window edge to edge. */
 .hero {
-  width: var(--right-w);
-  flex: 0 0 var(--right-w);
-  align-self: stretch;              /* match the left column's height        */
-  position: relative;
-  background: #000004;              /* deep-field canvas paints over this     */
+  position: fixed; top: 0; right: 0;
+  width: var(--right-w); height: 100vh;
+  background: #000004;
   overflow: hidden;
+  z-index: 1;
 }
 .hero #deepfield { position: absolute; inset: 0; }
 
-/* RIGHT — sub-page detail */
+/* Right pane — sub-page detail. */
 .detail {
   display: none;
+  right: 0;
   width: var(--right-w);
-  flex: 0 0 var(--right-w);
-  padding: var(--pad-y) clamp(1.6rem, 4vw, 4.2rem);
-}
-.detail-inner { max-width: 46rem; }
-
-/* --------------------------------------------------------------------------
-   View states  (toggled on <body data-view="…">)
-   -------------------------------------------------------------------------- */
-
-/* HOME — one document, both halves scroll together */
-body[data-view="home"] .detail { display: none; }
-body[data-view="home"] .hero { display: block; }
-
-/* SUB-PAGE — two fixed panes, each with its own scrollbar (independent) */
-body[data-view="page"] { overflow: hidden; }     /* the panes own the scroll */
-body[data-view="page"] .shell { min-height: 100vh; }
-body[data-view="page"] .master {
-  position: fixed; top: 0; left: 0;
-  height: 100vh; overflow-y: auto;
-  border-right: 1px solid var(--line);
-  z-index: 2;
-}
-body[data-view="page"] .hero { display: none; }
-body[data-view="page"] .detail {
-  display: block;
-  position: fixed; top: 0; right: 0;
-  height: 100vh; overflow-y: auto;
+  padding: var(--pad-y) clamp(1.6rem, 4vw, 4rem) 3rem;
   z-index: 1;
 }
 
-/* thin, quiet scrollbars for the panes */
-.master, .detail { scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent; }
-.master::-webkit-scrollbar, .detail::-webkit-scrollbar { width: 9px; }
-.master::-webkit-scrollbar-thumb, .detail::-webkit-scrollbar-thumb {
-  background: var(--line-strong); border-radius: 9px;
-  border: 3px solid var(--paper);
-}
+body[data-view="home"] .hero   { display: block; }
+body[data-view="home"] .detail { display: none; }
+body[data-view="page"] .hero   { display: none; }
+body[data-view="page"] .detail { display: block; }
 
 /* --------------------------------------------------------------------------
-   Masthead (top of the left column)
+   Masthead
    -------------------------------------------------------------------------- */
-.brand { display: block; margin-bottom: clamp(1.8rem, 5vh, 3.2rem); }
-.brand:hover { text-decoration: none; }
-.brand .name {
-  display: block;
-  font-family: var(--display);
-  font-optical-sizing: auto;
-  font-weight: 460;
-  font-size: clamp(1.35rem, 2vw, 1.7rem);
-  line-height: 1.12;
-  color: var(--ink);
-  letter-spacing: -0.005em;
-}
-.brand .name .cjk { font-weight: 420; margin-left: 0.35em; letter-spacing: 0.04em; }
-.brand .role {
-  display: block;
-  margin-top: 0.4rem;
-  font-size: 0.86rem;
-  color: var(--ink-soft);
-  font-style: italic;
-}
+.brand { display: block; margin-bottom: 2.6rem; }
+.brand:hover { opacity: 1; }
+.brand .name { display: block; font-size: 1rem; color: var(--ink); }
+.brand .name .cjk { margin-left: 0.5em; }
+.brand .role { display: block; margin-top: 0.15rem; color: var(--muted); }
 .brand .home-hint {
-  display: block; margin-top: 0.55rem;
-  font-family: var(--display);
-  font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--muted);
+  display: block; margin-top: 0.6rem;
+  font-size: 0.78rem; letter-spacing: 0.12em; color: var(--muted);
 }
-body[data-view="home"] .brand .home-hint { visibility: hidden; }
+body[data-view="home"] .brand .home-hint { display: none; }
 
 /* --------------------------------------------------------------------------
-   Section blocks in the left column
+   Left column content
    -------------------------------------------------------------------------- */
-.block { margin-bottom: clamp(1.8rem, 4.6vh, 3rem); }
+.block { margin-bottom: 2.4rem; }
 
 h2.heading {
-  font-family: var(--display);
+  font-size: 0.82rem;
   font-weight: 400;
-  font-size: 1.18rem;
-  letter-spacing: 0.005em;
-  margin: 0 0 0.85rem;
-  color: var(--ink);
-}
-h2.heading::after {
-  content: ""; display: block;
-  width: 2.2rem; height: 1px; margin-top: 0.6rem;
-  background: var(--line-strong);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.9rem;
 }
 
-.block > p, .detail-inner p {
-  margin: 0 0 0.95rem;
-  text-align: justify;
-  hyphens: auto;
-}
+.block > p { margin: 0 0 0.95rem; }
 
-/* "definition" items: bold lead-in then running text */
-.items { margin: 0.4rem 0 0; padding: 0; list-style: none; }
-.items li { margin: 0 0 0.85rem; text-align: justify; hyphens: auto; }
-.items li .lead { font-weight: 600; color: var(--ink); }
-.items li .lead::after { content: ":"; font-weight: 600; }
+.items { margin: 0; padding: 0; list-style: none; }
+.items li { margin: 0 0 0.95rem; }
+.items li .lead::after { content: ":\00a0"; }   /* term-colon-space, same weight */
 
 /* --------------------------------------------------------------------------
-   Detail (right) — shared
+   Right column (detail) — same flat treatment
    -------------------------------------------------------------------------- */
-.detail-inner h1.title {
-  font-family: var(--display);
-  font-optical-sizing: auto;
-  font-weight: 420;
-  font-size: clamp(1.7rem, 3vw, 2.5rem);
-  line-height: 1.08;
-  margin: 0 0 0.4rem;
-  letter-spacing: -0.01em;
-}
-.detail-inner .updated {
-  font-size: 0.8rem; color: var(--muted); font-style: italic;
-  margin: 0 0 1.8rem;
-}
+.detail-inner { max-width: 42rem; }
+
 .detail-inner .kicker {
-  font-family: var(--display);
-  font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--accent); margin: 0 0 0.9rem;
+  font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--muted); margin: 0 0 0.9rem;
 }
-.detail-inner .lede { font-size: 1.06rem; color: var(--ink); }
+.detail-inner h1.title {
+  font-size: 1rem; font-weight: 400; color: var(--ink);
+  margin: 0 0 1.1rem;
+}
+.detail-inner .updated { color: var(--muted); margin: 0 0 1.4rem; }
+.detail-inner p { margin: 0 0 0.95rem; }
 
-.figure { margin: 1.6rem 0; }
-.figure img {
-  display: block; width: 100%; height: auto;
-  border: 1px solid var(--line);
-}
-.figure figcaption {
-  margin-top: 0.5rem; font-size: 0.76rem; color: var(--muted);
-  font-style: italic;
-}
-
-.goals { margin: 1.4rem 0 0; padding: 0; list-style: none; counter-reset: g; }
-.goals li {
-  position: relative; padding-left: 2.1rem; margin-bottom: 1rem;
-  text-align: justify; hyphens: auto;
-}
-.goals li::before {
-  counter-increment: g; content: counter(g);
-  position: absolute; left: 0; top: 0.05rem;
-  font-family: var(--display); font-size: 0.95rem; color: var(--accent);
-  width: 1.5rem; height: 1.5rem; line-height: 1.5rem; text-align: center;
-  border: 1px solid var(--line-strong); border-radius: 50%;
-}
+.figure { margin: 1.4rem 0; }
+.figure img { display: block; width: 100%; height: auto; }
+.figure figcaption { margin-top: 0.5rem; font-size: 0.82rem; color: var(--muted); }
 
 /* CV — embedded PDF fills the pane */
 .detail.cv { padding: 0; }
 .cv-bar {
-  padding: clamp(1.4rem, 3vh, 2rem) clamp(1.6rem, 4vw, 4.2rem) 1.1rem;
-  display: flex; align-items: baseline; justify-content: space-between;
-  gap: 1rem; flex-wrap: wrap; border-bottom: 1px solid var(--line);
+  padding: var(--pad-y) clamp(1.6rem, 4vw, 4rem) 1rem;
+  display: flex; align-items: baseline; gap: 1.2rem; flex-wrap: wrap;
 }
 .cv-bar .title { margin: 0; }
-.cv-frame {
-  width: 100%;
-  height: calc(100vh - 5.6rem);
-  border: 0; display: block; background: #525659;
-}
-.cv-fallback { padding: 0.9rem clamp(1.6rem, 4vw, 4.2rem); font-size: 0.85rem; }
+.cv-bar .updated { margin: 0; }
+.cv-frame { width: 100%; height: calc(100vh - 5rem); border: 0; display: block; background: #525659; }
+.cv-fallback { padding: 0.8rem clamp(1.6rem, 4vw, 4rem); font-size: 0.85rem; }
 
-/* Gallery — varied editorial grid */
+/* Gallery — plain images, no frames */
 .gallery-grid {
-  margin-top: 1.4rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.9rem;
-  grid-auto-flow: dense;
+  margin-top: 1.2rem; display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0.7rem; grid-auto-flow: dense;
 }
 .gallery-grid figure { margin: 0; }
-.gallery-grid img {
-  display: block; width: 100%; height: 100%; object-fit: cover;
-  border: 1px solid var(--line); aspect-ratio: 3 / 2;
-}
+.gallery-grid img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3 / 2; }
 .gallery-grid .tall img { aspect-ratio: 3 / 4; }
 .gallery-grid .wide { grid-column: span 2; }
 .gallery-grid .wide img { aspect-ratio: 2 / 1; }
 
-/* Students */
-.students { margin: 1.5rem 0 0; padding: 0; list-style: none; }
-.students li {
-  display: grid;
-  grid-template-columns: 84px 1fr;
-  gap: 1.1rem;
-  padding: 1.1rem 0;
-  border-top: 1px solid var(--line);
-}
-.students li:last-child { border-bottom: 1px solid var(--line); }
-.students .photo {
-  width: 84px; height: 84px; object-fit: cover;
-  border: 1px solid var(--line); background: #eef1f3;
-}
-.students .who { font-weight: 600; color: var(--ink); font-size: 1.02rem; }
-.students dl { margin: 0.3rem 0 0; }
-.students dl div { display: flex; gap: 0.4rem; font-size: 0.9rem; }
-.students dl dt { color: var(--muted); min-width: 5.5rem; font-style: italic; }
-.students dl dd { margin: 0; color: var(--ink-soft); }
-
-/* 404 */
-.notfound .code {
-  font-family: var(--display); font-weight: 300;
-  font-size: clamp(3rem, 9vw, 6rem); line-height: 1; margin: 0 0 0.6rem;
-  color: var(--ink);
-}
+/* Students — whitespace-separated rows, no rules */
+.students { margin: 1.2rem 0 0; padding: 0; list-style: none; }
+.students li { display: grid; grid-template-columns: 72px 1fr; gap: 1.1rem; margin-bottom: 1.6rem; }
+.students .photo { width: 72px; height: 72px; object-fit: cover; background: #eef1f3; }
+.students .who { color: var(--ink); margin-bottom: 0.2rem; }
+.students dl { margin: 0; }
+.students dl div { display: flex; gap: 0.6rem; }
+.students dl dt { color: var(--muted); min-width: 4.8rem; }
+.students dl dd { margin: 0; }
 
 /* --------------------------------------------------------------------------
-   Responsive — collapse to a single scrolling column on narrow screens.
-   On mobile everything is one document scroll (home & sub-page alike).
+   Mobile — single document scroll, still invisible scrollbar
    -------------------------------------------------------------------------- */
 @media (max-width: 920px) {
   :root { --left-w: 100vw; --right-w: 100vw; }
+  html, body { overflow: auto; }
+  body { scrollbar-width: none; -ms-overflow-style: none; }
+  body::-webkit-scrollbar { width: 0; height: 0; display: none; }
 
   .shell { display: block; }
-  .master {
-    width: 100%; flex-basis: auto; border-right: 0;
-    border-bottom: 1px solid var(--line);
-  }
-  .master-inner { max-width: 38rem; }
-
-  /* In every view on mobile: static, full-width, single scroll. */
-  body[data-view="page"] { overflow: visible; }
-  body[data-view="page"] .master,
-  body[data-view="page"] .detail {
+  .master, .detail {
     position: static; height: auto; width: 100%; overflow: visible;
   }
-  .detail-inner { max-width: 40rem; }
+  .master { padding: 1.6rem 1.2rem 2rem; }
+  .master-inner, .detail-inner { max-width: 38rem; }
 
-  .hero { width: 100%; flex-basis: auto; height: 64vh; min-height: 22rem; align-self: auto; }
+  .hero { position: relative; width: 100%; height: 62vh; min-height: 20rem; }
   body[data-view="page"] .hero { display: none; }
 
-  .cv-frame { height: 80vh; min-height: 30rem; }
+  .cv-frame { height: 80vh; min-height: 28rem; }
   .gallery-grid { grid-template-columns: 1fr 1fr; }
 }
-
 @media (max-width: 560px) {
   .gallery-grid { grid-template-columns: 1fr; }
   .gallery-grid .wide { grid-column: span 1; }
-  .students li { grid-template-columns: 64px 1fr; }
-  .students .photo { width: 64px; height: 64px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * { scroll-behavior: auto !important; }
 }

@@ -12,7 +12,7 @@ two-column design in `website_design.pdf`:
 
 | View | Behaviour |
 | --- | --- |
-| **Home** (`/` or `/#/`) | The interactive image is shown and the two columns belong to **one document**, so they **scroll together**. |
+| **Home** (`/` or `/#/`) | The interactive image fills the right of the window; the left column scrolls independently. |
 | **Sub-page** (`/#/thistle`, `/#/cv`, `/#/gallery`, `/#/students`) | The left and right columns are two panes that **scroll independently**. |
 
 The links inside the left column (*THISTLE*, *CV*, *gallery*, *students*) open the
@@ -35,7 +35,13 @@ plain GitHub Pages.
   `index.html` (THISTLE, CV, Gallery, Students, 404).
 - **Routes** &mdash; the `ROUTES` map at the top of `assets/js/app.js`.
 - **Styling** &mdash; `assets/css/styles.css` (`--right-w: 61.11vw` sets the column
-  split; `--ink`, `--paper`, `--link` set the palette).
+  split; `--ink`, `--paper`, `--muted` set the palette; the type is IBM Plex Mono).
+
+Design notes: both columns scroll **invisibly** (no scrollbars); links are marked
+by an **underline**, never a colour; there are no rules or dividers. Underlined
+keywords that don't yet have a page (PRIMER, UltraVISTA, CANDELS, A3COSMOS,
+dust-obscured cosmic SFRD, ESEA) all route to the 404 view &mdash; give any of them
+a real page by adding a `<template>` and a `ROUTES` entry.
 
 ## Replace the placeholder images
 
@@ -58,6 +64,7 @@ the date in the `tpl-cv` template in `index.html`.
 ## The interactive image
 
 `assets/js/deepfield.js` (your existing JADES deep-field gravitational-lens
-widget) is mounted on the home view by `assets/js/app.js`. Move your mouse over
-it to lens the field; scroll over it to zoom; it cycles wavelength bands on its
-own. It pauses automatically when off screen.
+widget) is mounted on the home view by `assets/js/app.js`. It fills the window (cropped/zoomed from the top-left) with the current
+wavelength band labelled in the **top-left** corner. Move your mouse over it to
+lens the field; scroll over it to zoom; it cycles bands on its own and pauses
+when off screen.
