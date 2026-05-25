@@ -296,7 +296,7 @@
             const bi=(py*W+px)*4; const edge=clamp(1-(Math.max(Math.abs(px-m.x),Math.abs(py-m.y))-pad*0.78)/(pad*0.22),0,1);
             // magnify only the flux ABOVE the sky background (BG); the sky itself
             // isn't lensed, so demagnified empty regions stay at BG instead of going black.
-            const BR=0,BG_=0,BB=4;
+            const BR=0,BG_=0,BB=0;
             const lr=BR+(c[0]-BR)*mu, lg=BG_+(c[1]-BG_)*mu, lb=BB+(c[2]-BB)*mu;
             const cr=src[bi]*(1-edge)+clamp(lr,0,255)*edge, cg=src[bi+1]*(1-edge)+clamp(lg,0,255)*edge, cb=src[bi+2]*(1-edge)+clamp(lb,0,255)*edge;
             for(let sy=0;sy<step;sy++)for(let sx=0;sx<step;sx++){const ox=px-x0+sx,oy=py-y0+sy;if(ox>=bw||oy>=bh)continue;const oi=(oy*bw+ox)*4;od[oi]=cr;od[oi+1]=cg;od[oi+2]=cb;od[oi+3]=255;}
