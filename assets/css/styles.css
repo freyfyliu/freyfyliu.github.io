@@ -117,7 +117,7 @@ h2.heading {
 .block > p { margin: 0 0 calc(1 * var(--lh) * 1rem); text-align: justify; hyphens: none; }
 
 /* project / teaching list: indented block, bold lead-in, no bullet glyphs */
-.items { margin: calc(1.1 * var(--lh) * 1rem) 0 0; padding: 0 0 0 1.7rem; list-style: none; }
+.items { margin: calc(1.1 * var(--lh) * 1rem) 0 0; padding: 0 0 0 1.1rem; list-style: none; }
 .items li { margin: 0 0 calc(2 * var(--lh) * 1rem); text-align: justify; hyphens: none; }
 .items li:last-child { margin-bottom: 0; }
 .items li .lead { font-weight: 600; }
