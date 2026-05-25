@@ -71,7 +71,7 @@ a:hover, a:focus-visible { opacity: 0.55; }
   padding: var(--pad-y) clamp(1.5rem, 4.4vw, 3.8rem) 3rem;
   z-index: 2;
 }
-.master-inner { max-width: 30rem; }     /* narrow column → wide right margin */
+.master-inner { max-width: 45rem; }     /* narrow column → wide right margin */
 
 .hero {
   position: fixed; top: 0; right: 0;
@@ -118,7 +118,7 @@ h2.heading {
 
 /* project / teaching list: indented block, bold lead-in, no bullet glyphs */
 .items { margin: calc(1.1 * var(--lh) * 1rem) 0 0; padding: 0 0 0 1.1rem; list-style: none; }
-.items li { margin: 0 0 calc(2 * var(--lh) * 1rem); text-align: justify; hyphens: none; }
+.items li { margin: 0 0 calc(2 * var(--lh) * 1.7rem); text-align: justify; hyphens: none; }
 .items li:last-child { margin-bottom: 0; }
 .items li .lead { font-weight: 600; }
 .items li .lead::after { content: ":\00a0"; font-weight: 600; }
