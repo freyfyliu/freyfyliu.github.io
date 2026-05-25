@@ -262,7 +262,7 @@
       const m = S.mouse;
       if (m.active && S.bandData[BAND_KEYS[activeBand]]) {
         const src = S.bandData[BAND_KEYS[activeBand]].data;
-        const L = Math.min(W,H)*0.17*m.scale, step = 2, pad = L*4.2;
+        const L = Math.min(W,H)*0.17*m.scale, step = 2, pad = L*1.2;
         const x0=clamp((m.x-pad)|0,0,W-1),x1=clamp((m.x+pad)|0,0,W-1),y0=clamp((m.y-pad)|0,0,H-1),y1=clamp((m.y+pad)|0,0,H-1);
         const bw=x1-x0+1,bh=y1-y0+1;
         if (bw>1 && bh>1) {
@@ -296,7 +296,7 @@
             const bi=(py*W+px)*4; const edge=clamp(1-(Math.max(Math.abs(px-m.x),Math.abs(py-m.y))-pad*0.78)/(pad*0.22),0,1);
             // magnify only the flux ABOVE the sky background (BG); the sky itself
             // isn't lensed, so demagnified empty regions stay at BG instead of going black.
-            const BR=0,BG_=0,BB=0;
+            const BR=0,BG_=0,BB=2;
             const lr=BR+(c[0]-BR)*mu, lg=BG_+(c[1]-BG_)*mu, lb=BB+(c[2]-BB)*mu;
             const cr=src[bi]*(1-edge)+clamp(lr,0,255)*edge, cg=src[bi+1]*(1-edge)+clamp(lg,0,255)*edge, cb=src[bi+2]*(1-edge)+clamp(lb,0,255)*edge;
             for(let sy=0;sy<step;sy++)for(let sx=0;sx<step;sx++){const ox=px-x0+sx,oy=py-y0+sy;if(ox>=bw||oy>=bh)continue;const oi=(oy*bw+ox)*4;od[oi]=cr;od[oi+1]=cg;od[oi+2]=cb;od[oi+3]=255;}
