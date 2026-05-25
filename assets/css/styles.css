@@ -120,8 +120,8 @@ h2.heading {
 .items { margin: calc(1.1 * var(--lh) * 1rem) 0 0; padding: 0 0 0 1.1rem; list-style: none; }
 .items li { margin: 0 0 calc(0.2 * var(--lh) * 1.7rem); text-align: justify; hyphens: none; }
 .items li:last-child { margin-bottom: 0; }
-.items li .lead { font-weight: 600; }
-.items li .lead::after { content: ":\00a0"; font-weight: 600; }
+.items li .lead { font-weight: 400; }
+.items li .lead::after { content: ":\00a0"; font-weight: 400; }
 
 /* --------------------------------------------------------------------------
    Right column (detail) — same typesetting rules
