@@ -148,7 +148,7 @@ h2.heading {
 }
 .cv-bar .title { margin: 0; }
 .cv-bar .updated { margin: 0; }
-.cv-frame { width: calc(100%-3rem); margin-left: 3rem; height: calc(100vh - 5rem); border: 0; display: block; background: #525659; }
+.cv-frame { width: calc(100% - 5rem); margin-left: 5rem; height: calc(100vh - 5rem); border: 0; display: block; background: #525659; }
 .cv-fallback { padding: 0.8rem clamp(1.6rem, 4vw, 4rem); font-size: 0.86rem; }
 
 /* Gallery — plain images, no frames */
