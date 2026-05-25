@@ -1,380 +1,329 @@
+/* ==========================================================================
+   Feng-Yuan "Frey" Liu — personal academic site
+   Two-column "left master / right detail" layout per the design spec.
+     · Home view  : both columns belong to ONE document → they scroll together.
+     · Sub-page   : left + right are two fixed panes → they scroll independently.
+   Background pure white, all ink at ~90% black.
+   ========================================================================== */
+
 :root {
-  --left-width: 38.89vw;
-  --right-width: 61.11vw;
-  --paper: #ffffff;
-  --ink: #191919;
-  --muted: #616161;
-  --link: #5c82a3;
-  --link-hover: #1f577d;
-  --black: #090909;
-  --mono: "Courier New", Courier, monospace;
+  /* The right-hand panel is 61.11% of the page; the left takes the rest. */
+  --right-w: 61.11vw;
+  --left-w: 38.89vw;
+
+  --paper: #ffffff;            /* pure white */
+  --ink: #1a1a1a;              /* 90% black  */
+  --ink-soft: #4a4a4a;
+  --muted: #8a8a8a;
+  --line: rgba(26, 26, 26, 0.14);
+  --line-strong: rgba(26, 26, 26, 0.28);
+  --link: #2f6f95;
+  --link-hover: #16455f;
+  --accent: #2f6f95;
+
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --display: "Fraunces", Georgia, serif;
+
+  --pad-y: clamp(2rem, 4.2vh, 3.4rem);
+  --pad-x: clamp(1.4rem, 3.4vw, 3.4rem);
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-  font-size: 16px;
-  background: var(--paper);
-}
+html { font-size: 17px; -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
-  min-height: 100vh;
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--mono);
-  line-height: 1.34;
-  font-weight: 400;
+  font-family: var(--serif);
+  font-weight: 380;
+  line-height: 1.5;
+  letter-spacing: 0.005em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
   color: var(--link);
-  text-decoration-line: underline;
-  text-decoration-thickness: 1px;
+  text-decoration: none;
   text-underline-offset: 0.16em;
+  text-decoration-thickness: from-font;
+  transition: color 0.18s ease;
 }
+a:hover, a:focus-visible { color: var(--link-hover); text-decoration: underline; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
 
-a:hover,
-a:focus {
-  color: var(--link-hover);
+/* --------------------------------------------------------------------------
+   Shell
+   -------------------------------------------------------------------------- */
+.shell { display: flex; align-items: stretch; min-height: 100vh; }
+
+/* LEFT — persistent home content ("master" column) */
+.master {
+  width: var(--left-w);
+  flex: 0 0 var(--left-w);
+  padding: var(--pad-y) var(--pad-x) calc(var(--pad-y) * 1.4);
+  border-right: 1px solid var(--line);
 }
+.master-inner { max-width: 30rem; margin: 0 auto; }
 
-img {
-  max-width: 100%;
-}
-
-.layout {
-  min-height: 100vh;
-}
-
-.left-column {
-  width: var(--left-width);
-  padding: 2.05rem 2.7vw 4.8rem 1.65rem;
-  background: var(--paper);
-}
-
-.home-page .left-column {
+/* RIGHT — interactive image (home) */
+.hero {
+  width: var(--right-w);
+  flex: 0 0 var(--right-w);
+  align-self: stretch;              /* match the left column's height        */
   position: relative;
-  z-index: 4;
-  min-height: 135vh;
-}
-
-.home-stage {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: var(--right-width);
-  height: 100vh;
+  background: #000004;              /* deep-field canvas paints over this     */
   overflow: hidden;
-  background: var(--black);
+}
+.hero #deepfield { position: absolute; inset: 0; }
+
+/* RIGHT — sub-page detail */
+.detail {
+  display: none;
+  width: var(--right-w);
+  flex: 0 0 var(--right-w);
+  padding: var(--pad-y) clamp(1.6rem, 4vw, 4.2rem);
+}
+.detail-inner { max-width: 46rem; }
+
+/* --------------------------------------------------------------------------
+   View states  (toggled on <body data-view="…">)
+   -------------------------------------------------------------------------- */
+
+/* HOME — one document, both halves scroll together */
+body[data-view="home"] .detail { display: none; }
+body[data-view="home"] .hero { display: block; }
+
+/* SUB-PAGE — two fixed panes, each with its own scrollbar (independent) */
+body[data-view="page"] { overflow: hidden; }     /* the panes own the scroll */
+body[data-view="page"] .shell { min-height: 100vh; }
+body[data-view="page"] .master {
+  position: fixed; top: 0; left: 0;
+  height: 100vh; overflow-y: auto;
+  border-right: 1px solid var(--line);
+  z-index: 2;
+}
+body[data-view="page"] .hero { display: none; }
+body[data-view="page"] .detail {
+  display: block;
+  position: fixed; top: 0; right: 0;
+  height: 100vh; overflow-y: auto;
   z-index: 1;
 }
 
-.split-page .left-column {
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  overflow-y: auto;
-  z-index: 3;
+/* thin, quiet scrollbars for the panes */
+.master, .detail { scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent; }
+.master::-webkit-scrollbar, .detail::-webkit-scrollbar { width: 9px; }
+.master::-webkit-scrollbar-thumb, .detail::-webkit-scrollbar-thumb {
+  background: var(--line-strong); border-radius: 9px;
+  border: 3px solid var(--paper);
 }
 
-.right-column {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: var(--right-width);
-  overflow-y: auto;
-  background: var(--paper);
-  z-index: 2;
-}
-
-.brand {
-  margin-bottom: 4.1rem;
-}
-
-.brand-title {
-  margin: 0;
-  font-size: 0.94rem;
-  line-height: 1.18;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-}
-
-.brand-title a {
+/* --------------------------------------------------------------------------
+   Masthead (top of the left column)
+   -------------------------------------------------------------------------- */
+.brand { display: block; margin-bottom: clamp(1.8rem, 5vh, 3.2rem); }
+.brand:hover { text-decoration: none; }
+.brand .name {
+  display: block;
+  font-family: var(--display);
+  font-optical-sizing: auto;
+  font-weight: 460;
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+  line-height: 1.12;
   color: var(--ink);
-  text-decoration: none;
+  letter-spacing: -0.005em;
 }
-
-.brand-subtitle {
-  margin-top: 0.35rem;
+.brand .name .cjk { font-weight: 420; margin-left: 0.35em; letter-spacing: 0.04em; }
+.brand .role {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+.brand .home-hint {
+  display: block; margin-top: 0.55rem;
+  font-family: var(--display);
+  font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--muted);
-  font-size: 0.78rem;
 }
+body[data-view="home"] .brand .home-hint { visibility: hidden; }
 
-.section {
-  margin-top: 3.15rem;
-}
+/* --------------------------------------------------------------------------
+   Section blocks in the left column
+   -------------------------------------------------------------------------- */
+.block { margin-bottom: clamp(1.8rem, 4.6vh, 3rem); }
 
-.section.first {
-  margin-top: 0;
-}
-
-.section-title {
-  margin: 0 0 1.05rem 0;
-  font-size: 1rem;
-  line-height: 1.22;
+h2.heading {
+  font-family: var(--display);
   font-weight: 400;
+  font-size: 1.18rem;
+  letter-spacing: 0.005em;
+  margin: 0 0 0.85rem;
+  color: var(--ink);
+}
+h2.heading::after {
+  content: ""; display: block;
+  width: 2.2rem; height: 1px; margin-top: 0.6rem;
+  background: var(--line-strong);
 }
 
-p {
-  margin: 0 0 1.18rem 0;
+.block > p, .detail-inner p {
+  margin: 0 0 0.95rem;
+  text-align: justify;
+  hyphens: auto;
 }
 
-.prose {
-  max-width: 35.8rem;
-  font-size: 0.94rem;
+/* "definition" items: bold lead-in then running text */
+.items { margin: 0.4rem 0 0; padding: 0; list-style: none; }
+.items li { margin: 0 0 0.85rem; text-align: justify; hyphens: auto; }
+.items li .lead { font-weight: 600; color: var(--ink); }
+.items li .lead::after { content: ":"; font-weight: 600; }
+
+/* --------------------------------------------------------------------------
+   Detail (right) — shared
+   -------------------------------------------------------------------------- */
+.detail-inner h1.title {
+  font-family: var(--display);
+  font-optical-sizing: auto;
+  font-weight: 420;
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  line-height: 1.08;
+  margin: 0 0 0.4rem;
+  letter-spacing: -0.01em;
+}
+.detail-inner .updated {
+  font-size: 0.8rem; color: var(--muted); font-style: italic;
+  margin: 0 0 1.8rem;
+}
+.detail-inner .kicker {
+  font-family: var(--display);
+  font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--accent); margin: 0 0 0.9rem;
+}
+.detail-inner .lede { font-size: 1.06rem; color: var(--ink); }
+
+.figure { margin: 1.6rem 0; }
+.figure img {
+  display: block; width: 100%; height: auto;
+  border: 1px solid var(--line);
+}
+.figure figcaption {
+  margin-top: 0.5rem; font-size: 0.76rem; color: var(--muted);
+  font-style: italic;
 }
 
-.prose.narrow {
-  max-width: 30.4rem;
+.goals { margin: 1.4rem 0 0; padding: 0; list-style: none; counter-reset: g; }
+.goals li {
+  position: relative; padding-left: 2.1rem; margin-bottom: 1rem;
+  text-align: justify; hyphens: auto;
+}
+.goals li::before {
+  counter-increment: g; content: counter(g);
+  position: absolute; left: 0; top: 0.05rem;
+  font-family: var(--display); font-size: 0.95rem; color: var(--accent);
+  width: 1.5rem; height: 1.5rem; line-height: 1.5rem; text-align: center;
+  border: 1px solid var(--line-strong); border-radius: 50%;
 }
 
-.prose p:last-child {
-  margin-bottom: 0;
+/* CV — embedded PDF fills the pane */
+.detail.cv { padding: 0; }
+.cv-bar {
+  padding: clamp(1.4rem, 3vh, 2rem) clamp(1.6rem, 4vw, 4.2rem) 1.1rem;
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap; border-bottom: 1px solid var(--line);
 }
-
-.item {
-  margin-top: 1.15rem;
-}
-
-.item-title {
-  margin: 0 0 0.35rem 0;
-  font-size: 0.94rem;
-  font-weight: 400;
-}
-
-.indent {
-  margin-left: 1.4rem;
-}
-
-.spacer-small {
-  height: 1.35rem;
-}
-
-.spacer-medium {
-  height: 2.4rem;
-}
-
-.spacer-large {
-  height: 4.2rem;
-}
-
-.top-links {
-  margin-top: 2.5rem;
-  font-size: 0.84rem;
-}
-
-.top-links a {
-  margin-right: 1.1rem;
-}
-
-.right-image {
-  display: block;
+.cv-bar .title { margin: 0; }
+.cv-frame {
   width: 100%;
-  min-height: 62vh;
-  height: 70vh;
-  object-fit: cover;
-  filter: grayscale(100%) contrast(1.05);
+  height: calc(100vh - 5.6rem);
+  border: 0; display: block; background: #525659;
+}
+.cv-fallback { padding: 0.9rem clamp(1.6rem, 4vw, 4.2rem); font-size: 0.85rem; }
+
+/* Gallery — varied editorial grid */
+.gallery-grid {
+  margin-top: 1.4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+  grid-auto-flow: dense;
+}
+.gallery-grid figure { margin: 0; }
+.gallery-grid img {
+  display: block; width: 100%; height: 100%; object-fit: cover;
+  border: 1px solid var(--line); aspect-ratio: 3 / 2;
+}
+.gallery-grid .tall img { aspect-ratio: 3 / 4; }
+.gallery-grid .wide { grid-column: span 2; }
+.gallery-grid .wide img { aspect-ratio: 2 / 1; }
+
+/* Students */
+.students { margin: 1.5rem 0 0; padding: 0; list-style: none; }
+.students li {
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  gap: 1.1rem;
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--line);
+}
+.students li:last-child { border-bottom: 1px solid var(--line); }
+.students .photo {
+  width: 84px; height: 84px; object-fit: cover;
+  border: 1px solid var(--line); background: #eef1f3;
+}
+.students .who { font-weight: 600; color: var(--ink); font-size: 1.02rem; }
+.students dl { margin: 0.3rem 0 0; }
+.students dl div { display: flex; gap: 0.4rem; font-size: 0.9rem; }
+.students dl dt { color: var(--muted); min-width: 5.5rem; font-style: italic; }
+.students dl dd { margin: 0; color: var(--ink-soft); }
+
+/* 404 */
+.notfound .code {
+  font-family: var(--display); font-weight: 300;
+  font-size: clamp(3rem, 9vw, 6rem); line-height: 1; margin: 0 0 0.6rem;
+  color: var(--ink);
 }
 
-.right-text {
-  padding: 2.65rem 4.8vw 5.5rem 2.3rem;
-  max-width: 58rem;
-}
+/* --------------------------------------------------------------------------
+   Responsive — collapse to a single scrolling column on narrow screens.
+   On mobile everything is one document scroll (home & sub-page alike).
+   -------------------------------------------------------------------------- */
+@media (max-width: 920px) {
+  :root { --left-w: 100vw; --right-w: 100vw; }
 
-.right-title {
-  margin: 0 0 1.15rem 0;
-  font-size: 1rem;
-  font-weight: 400;
-}
-
-.right-kicker {
-  margin: 0 0 2rem 0;
-  color: var(--muted);
-  font-size: 0.82rem;
-}
-
-.project-list {
-  margin: 1.5rem 0 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.project-list li {
-  margin: 0 0 1rem 0;
-}
-
-.cv-view {
-  padding: 2.05rem 2.2rem 2.2rem 0;
-}
-
-.cv-view .right-title,
-.cv-view .right-kicker {
-  padding-left: 0;
-  margin-left: 0;
-}
-
-.pdf-window {
-  width: 82%;
-  height: calc(100vh - 7.3rem);
-  min-height: 34rem;
-  background: var(--black);
-  overflow: hidden;
-}
-
-.pdf-window iframe {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  background: var(--black);
-}
-
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 1.4rem;
-  padding: 2.05rem 2.1rem 5rem 0;
-}
-
-.gallery-title {
-  flex: 0 0 100%;
-  margin: 0 0 0.2rem 0;
-  font-size: 1rem;
-  font-weight: 400;
-}
-
-.gallery figure {
-  margin: 0;
-  flex: 1 1 42%;
-  min-width: 16rem;
-}
-
-.gallery img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  filter: grayscale(100%) contrast(1.03);
-}
-
-.gallery figcaption {
-  margin-top: 0.48rem;
-  color: var(--muted);
-  font-size: 0.74rem;
-}
-
-.students {
-  padding: 2.05rem 4.8vw 5rem 0;
-  max-width: 44rem;
-}
-
-.student-card {
-  margin: 0 0 2.05rem 0;
-}
-
-.student-card h2 {
-  margin: 0 0 0.35rem 0;
-  font-size: 1rem;
-  font-weight: 400;
-}
-
-.student-card p {
-  margin-bottom: 0.35rem;
-}
-
-.not-found-right {
-  padding: 2.05rem 4.8vw 5rem 0;
-}
-
-.not-found-right .not-found-image {
-  display: block;
-  width: 100%;
-  max-height: 62vh;
-  object-fit: cover;
-  filter: grayscale(100%) contrast(1.07);
-  margin-top: 2.5rem;
-}
-
-.hidden-on-desktop {
-  display: none;
-}
-
-@media (max-width: 900px) {
-  :root {
-    --left-width: 100vw;
-    --right-width: 100vw;
+  .shell { display: block; }
+  .master {
+    width: 100%; flex-basis: auto; border-right: 0;
+    border-bottom: 1px solid var(--line);
   }
+  .master-inner { max-width: 38rem; }
 
-  .home-page .left-column,
-  .split-page .left-column,
-  .right-column,
-  .home-stage {
-    position: relative;
-    width: 100vw;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
+  /* In every view on mobile: static, full-width, single scroll. */
+  body[data-view="page"] { overflow: visible; }
+  body[data-view="page"] .master,
+  body[data-view="page"] .detail {
+    position: static; height: auto; width: 100%; overflow: visible;
   }
+  .detail-inner { max-width: 40rem; }
 
-  .home-stage {
-    height: 62vh;
-  }
+  .hero { width: 100%; flex-basis: auto; height: 64vh; min-height: 22rem; align-self: auto; }
+  body[data-view="page"] .hero { display: none; }
 
-  .split-page .left-column {
-    max-height: none;
-    overflow: visible;
-  }
+  .cv-frame { height: 80vh; min-height: 30rem; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+}
 
-  .right-column {
-    overflow: visible;
-  }
+@media (max-width: 560px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-grid .wide { grid-column: span 1; }
+  .students li { grid-template-columns: 64px 1fr; }
+  .students .photo { width: 64px; height: 64px; }
+}
 
-  .left-column {
-    padding: 1.65rem 1.2rem 3rem 1.2rem;
-  }
-
-  .right-text,
-  .students,
-  .not-found-right {
-    padding: 2rem 1.2rem 4rem 1.2rem;
-  }
-
-  .cv-view {
-    padding: 2rem 1.2rem 4rem 1.2rem;
-  }
-
-  .pdf-window {
-    width: 100%;
-    height: 72vh;
-    min-height: 28rem;
-  }
-
-  .gallery {
-    padding: 2rem 1.2rem 4rem 1.2rem;
-  }
-
-  .gallery figure {
-    min-width: 100%;
-  }
-
-  .hidden-on-desktop {
-    display: block;
-  }
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; }
 }

@@ -3,74 +3,214 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Feng-Yuan Frey Liu</title>
-  <meta name="description" content="Personal website of Feng-Yuan Frey Liu, extragalactic astronomer.">
+  <title>Feng-Yuan &ldquo;Frey&rdquo; Liu &mdash; Extragalactic astronomer</title>
+  <meta name="description" content="Personal academic site of Feng-Yuan Frey Liu (刘丰源), PhD candidate at the University of Edinburgh, working on dust-obscured galaxy formation across cosmic time.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..520&family=Newsreader:ital,opsz,wght@0,6..72,380..600;1,6..72,380..520&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body class="home-page">
-  <main class="layout">
-    <section class="left-column" aria-label="Homepage text">
+<body data-view="home">
+  <main class="shell">
 
-<header class="brand">
-  <h1 class="brand-title"><a href="index.html">Feng-Yuan Frey Liu&nbsp;&nbsp; 刘丰源</a></h1>
-  <div class="brand-subtitle">PhD candidate at the University of Edinburgh</div>
-</header>
+    <!-- ====================================================================
+         LEFT COLUMN — persistent "home" content (always present).
+         On the home view it scrolls together with the interactive image;
+         on a sub-page it scrolls independently from the right pane.
+         ==================================================================== -->
+    <section class="master" aria-label="About Feng-Yuan Frey Liu">
+      <div class="master-inner">
 
-<section class="section first prose">
-  <h2 class="section-title">Research</h2>
-  <p>My research interests span various fields of the extragalactic Universe. Most recently, my focus is on the formation and evolution of massive galaxies at high redshift. Specifically, my projects include:</p>
+        <a class="brand" href="#/" aria-label="Home — interactive deep field">
+          <span class="name">Feng-Yuan &ldquo;Frey&rdquo; Liu<span class="cjk">刘丰源</span></span>
+          <span class="role">PhD candidate at the University of Edinburgh</span>
+          <span class="home-hint">&larr; back to the interactive field</span>
+        </a>
 
-  <div class="item indent">
-    <p><a href="pages/thistle.html">Legacy field surveys</a>: Deep imaging and spectroscopic programmes provide our best understandings of the high-redshift Universe. I work closely with multi-wavelength data, including <a href="404.html">JWST</a>, <a href="404.html">VISTA</a>, <a href="404.html">HST</a>, <a href="404.html">ALMA</a>, and <a href="404.html">NOEMA</a>. I am also leading the <a href="pages/thistle.html">THISTLE survey</a>, one of the highest time allocations among VLA Large programmes for high-redshift physics.</p>
-  </div>
+        <div class="block">
+          <h2 class="heading">Research</h2>
+          <p>My research interests span various fields of the extragalactic
+            Universe. Most recently, my focus is on the formation and evolution
+            of massive galaxies at high redshift. Specifically, my projects
+            include:</p>
+          <ul class="items">
+            <li><span class="lead">Legacy field surveys</span> Deep
+              imaging/spectroscopic programmes provide our best understandings
+              of the high-redshift Universe, and I work closely with various
+              data at multi-wavelengths, including JWST (e.g.&nbsp;as a member of
+              the PRIMER survey), VISTA (e.g.&nbsp;UltraVISTA), HST
+              (e.g.&nbsp;CANDELS), ALMA (e.g.&nbsp;A3COSMOS), NOEMA. I am also
+              leading the <a href="#/thistle">THISTLE survey</a>, one of the
+              highest time allocations among VLA Large programmes for
+              high-redshift physics.</li>
+            <li><span class="lead">Cosmic evolution of dust-obscured star
+              formation</span> I am interested in how the dusty galaxies
+              contribute to the star-forming budget at a cosmological level. We
+              provide one of the tightest observational constraints of the
+              dust-obscured cosmic SFRD.</li>
+            <li><span class="lead">Gravitational lensing</span> I love lensing.</li>
+          </ul>
+        </div>
 
-  <div class="spacer-medium"></div>
+        <div class="block">
+          <h2 class="heading">Career path</h2>
+          <p>Currently, I am conducting my PhD study at the Royal Observatory
+            Edinburgh, at the heart of Scotland. I finished my undergraduate
+            study at Nanjing University, and then Master&rsquo;s at the National
+            Astronomical Observatory, Chinese Academy of Sciences. You can find
+            more details in my <a href="#/cv">CV</a>.</p>
+          <p>My work has taken me to over twenty countries in four continents,
+            and I am still exploring more. You can find some imagery proof in my
+            <a href="#/gallery">gallery</a>.</p>
+        </div>
 
-  <div class="item indent">
-    <p><a href="404.html">Cosmic evolution of dust-obscured star formation</a>: I am interested in how dusty galaxies contribute to the star-forming budget at a cosmological level. We provide one of the tightest observational constraints on the dust-obscured cosmic SFRD.</p>
-  </div>
+        <div class="block">
+          <h2 class="heading">Teaching</h2>
+          <p>Teaching and educating is one of my biggest passions, including:</p>
+          <ul class="items">
+            <li><span class="lead">Supervising</span> I enjoy working with
+              <a href="#/students">students</a>, mostly through undergraduate
+              summer projects.</li>
+            <li><span class="lead">Lecturing</span> I enjoy bringing
+              high-redshift astronomy into the classroom for undergraduate
+              courses.</li>
+            <li><span class="lead">Summer school organisation</span> I organised
+              the ESEA summer school.</li>
+          </ul>
+        </div>
 
-  <div class="spacer-small"></div>
-
-  <div class="item indent">
-    <p><a href="404.html">Gravitational lensing</a>: I love lensing.</p>
-  </div>
-</section>
-
-<section class="section prose narrow">
-  <h2 class="section-title">Career path</h2>
-  <p>Currently, I am conducting my PhD study at the Royal Observatory Edinburgh, at the heart of Scotland. I finished my undergraduate study at <a href="404.html">Nanjing University</a>, and then my Master's at the <a href="404.html">National Astronomical Observatories, Chinese Academy of Sciences</a>. You can find more details in my <a href="pages/cv.html">CV</a>.</p>
-  <p>My work has taken me to over twenty countries in four continents, and I am still exploring more. You can find some imagery proof in my <a href="pages/gallery.html">gallery</a>.</p>
-</section>
-
-<section class="section prose narrow">
-  <h2 class="section-title">Teaching</h2>
-  <p>Teaching and educating is one of my biggest passions, including:</p>
-  <div class="item indent">
-    <p><a href="pages/students.html">Supervising</a>: I enjoy working with students, mostly through undergraduate summer projects.</p>
-  </div>
-  <div class="item indent">
-    <p><a href="404.html">Lecturing</a>: I enjoy translating observational techniques and galaxy-evolution physics into accessible training material.</p>
-  </div>
-  <div class="item indent">
-    <p><a href="404.html">Summer school organisation</a>: I organised ESEA-I, the first Edinburgh School of Extragalactic Astronomy.</p>
-  </div>
-</section>
-
-<nav class="top-links" aria-label="Example pages">
-  <a href="pages/cv.html">CV</a>
-  <a href="pages/thistle.html">THISTLE</a>
-  <a href="pages/gallery.html">Gallery</a>
-  <a href="pages/students.html">Students</a>
-</nav>
-
+      </div>
     </section>
-    <aside id="deepfield" class="home-stage" aria-label="Interactive multi-wavelength deep field"></aside>
+
+    <!-- ====================================================================
+         RIGHT COLUMN (home) — the interactive deep-field image.
+         ==================================================================== -->
+    <aside class="hero" aria-label="Interactive JWST deep field">
+      <div id="deepfield"></div>
+    </aside>
+
+    <!-- ====================================================================
+         RIGHT COLUMN (sub-pages) — one container, content swapped by route.
+         Hidden on the home view; shown (and independently scrollable) on a
+         sub-page.
+         ==================================================================== -->
+    <article class="detail" id="detail" aria-live="polite"></article>
+
   </main>
-  <script src="assets/js/main.js"></script>
+
+  <!-- View templates: cloned into #detail by the router. -->
+  <template id="tpl-thistle">
+    <div class="detail-inner">
+      <p class="kicker">VLA Large Programme &middot; 2026B</p>
+      <h1 class="title">The THISTLE survey</h1>
+      <p class="lede">The THISTLE (Triple-tuning High-redshift Interferometric
+        STrong LEnsing) survey is a VLA Large Programme approved in the 2026B
+        semester (PI: Mark Dickinson; first author: Feng-Yuan Frey Liu). It
+        targets the lensing cluster field Abell&nbsp;370.</p>
+      <figure class="figure">
+        <img src="assets/img/img_thistle.jpg" alt="The Abell 370 lensing cluster field targeted by THISTLE"
+             data-fallback="assets/img/ALMAcontinuumfieldplaceholder.jpg">
+        <figcaption>img_thistle.jpg &mdash; Abell&nbsp;370 lensing field (placeholder).</figcaption>
+      </figure>
+      <p>The project is expected to span three years. In 2026B it is allocated
+        ~160&nbsp;hours (priority&nbsp;A).</p>
+      <p>THISTLE has two main science goals:</p>
+      <ol class="goals">
+        <li>Molecular-gas constraints from cosmic dawn to cosmic noon. Molecular
+          gas is measured through CO(1&ndash;0) or CO(2&ndash;1).</li>
+        <li>Radio-continuum constraints at all redshifts, over 16,400 galaxies
+          within the coverage.</li>
+      </ol>
+    </div>
+  </template>
+
+  <template id="tpl-cv">
+    <div class="cv-bar">
+      <h1 class="title">Academic CV</h1>
+      <p class="updated">Updated: 24 May 2026</p>
+    </div>
+    <iframe class="cv-frame" src="assets/pdf/CV_Frey_Liu.pdf#view=FitH"
+            title="Curriculum vitae of Feng-Yuan Frey Liu"></iframe>
+    <p class="cv-fallback">Trouble viewing it here?
+      <a href="assets/pdf/CV_Frey_Liu.pdf" target="_blank" rel="noopener">Open or download the CV (PDF)</a>.</p>
+  </template>
+
+  <template id="tpl-gallery">
+    <div class="detail-inner">
+      <p class="kicker">Four continents, twenty-odd countries</p>
+      <h1 class="title">Gallery</h1>
+      <div class="gallery-grid">
+        <figure class="wide"><img src="assets/img/img2.jpg" alt="img2"
+          data-fallback="assets/img/NOEMAcontrolroomplaceholder.jpg"></figure>
+        <figure class="tall"><img src="assets/img/img3.jpg" alt="img3"
+          data-fallback="assets/img/CosmosDustMapplaceholder.jpg"></figure>
+        <figure class="tall"><img src="assets/img/img1.jpg" alt="img1"
+          data-fallback="assets/img/LaSillaNightplaceholder.jpg"></figure>
+        <figure class="wide"><img src="assets/img/img0.jpg" alt="img0"
+          data-fallback="assets/img/Freystandingbeforeatelescope.jpg"></figure>
+      </div>
+    </div>
+  </template>
+
+  <template id="tpl-students">
+    <div class="detail-inner">
+      <p class="kicker">Summer research supervision</p>
+      <h1 class="title">Students</h1>
+      <ul class="students">
+        <li>
+          <img class="photo" src="assets/img/student_chang.jpg" alt="Chang Sui"
+               data-fallback="assets/img/Freystandingbeforeatelescope.jpg">
+          <div>
+            <div class="who">Chang Sui</div>
+            <dl>
+              <div><dt>Period</dt><dd>Summer student, July &ndash; August 2025</dd></div>
+              <div><dt>Project</dt><dd>Submm stacking analysis</dd></div>
+              <div><dt>Funding</dt><dd>SoPA</dd></div>
+              <div><dt>Now</dt><dd>MPhil student at Cambridge University</dd></div>
+            </dl>
+          </div>
+        </li>
+        <li>
+          <img class="photo" src="assets/img/student_lewis.jpg" alt="Lewis Neil"
+               data-fallback="assets/img/LaSillaNightplaceholder.jpg">
+          <div>
+            <div class="who">Lewis Neil</div>
+            <dl>
+              <div><dt>Period</dt><dd>Summer student, July &ndash; August 2025</dd></div>
+              <div><dt>Now</dt><dd>MPhil student at Edinburgh University</dd></div>
+            </dl>
+          </div>
+        </li>
+        <li>
+          <img class="photo" src="assets/img/student_daria.jpg" alt="Daria Nemova"
+               data-fallback="assets/img/CosmosDustMapplaceholder.jpg">
+          <div>
+            <div class="who">Daria Nemova</div>
+            <dl>
+              <div><dt>Period</dt><dd>Summer student, July &ndash; August 2025</dd></div>
+              <div><dt>Now</dt><dd>MPhil student at Oxford University</dd></div>
+            </dl>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </template>
+
+  <template id="tpl-404">
+    <div class="detail-inner notfound">
+      <p class="kicker">404 not found</p>
+      <p class="code">404</p>
+      <p class="lede">Oops, you have stepped beyond the observable Universe&hellip;</p>
+      <figure class="figure">
+        <img src="assets/img/img404.jpg" alt="Beyond the observable Universe"
+             data-fallback="assets/img/JWSTdeepfieldplaceholder.jpg">
+        <figcaption>img404.jpg (placeholder).</figcaption>
+      </figure>
+      <p><a href="#/">Return to the interactive field &rarr;</a></p>
+    </div>
+  </template>
+
   <script src="assets/js/deepfield.js"></script>
-  <script>
-    DeepField.mount(document.getElementById('deepfield'), { base: 'assets/img/deepfield/' });
-  </script>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
