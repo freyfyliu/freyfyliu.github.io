@@ -98,7 +98,7 @@
       // Populate by AREA (galaxies per megapixel), not a fixed count: a fixed
       // count spreads thin on large/wide windows and the field looks empty
       // (especially the lower part). Area-scaling keeps the fill uniform.
-      const perMpx = mobile ? 260 : 430;
+      const perMpx = mobile ? 130 : 150;
       const COUNT = Math.max(160, Math.min(2200, Math.round((W * H / 1e6) * perMpx)));
 
       const lib = m.gal;
