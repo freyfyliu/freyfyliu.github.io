@@ -95,8 +95,11 @@
       const W = S.W, H = S.H; if (!W || !H) return;
       const mobile = Math.min(W, H) < 520;
       const px_per_arcsec = Math.min(W, H) / FIELD_ARCSEC * FIELD_ZOOM;
-      const density = mobile ? 54 : 96;
-      const COUNT = Math.round(density * FIELD_ARCMIN * FIELD_ARCMIN);
+      // Populate by AREA (galaxies per megapixel), not a fixed count: a fixed
+      // count spreads thin on large/wide windows and the field looks empty
+      // (especially the lower part). Area-scaling keeps the fill uniform.
+      const perMpx = mobile ? 260 : 430;
+      const COUNT = Math.max(160, Math.min(2200, Math.round((W * H / 1e6) * perMpx)));
 
       const lib = m.gal;
       // The catalogue was brightness-selected (faint galaxies under-counted).

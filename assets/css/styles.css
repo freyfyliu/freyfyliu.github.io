@@ -1,10 +1,13 @@
 /* ==========================================================================
    Feng-Yuan "Frey" Liu — personal site
-   Flat, archival, monospace. Two fixed columns, both scrolling INVISIBLY:
-     · Home     — left = content (scrolls), right = interactive field (fills window).
-     · Sub-page — left = content (scrolls), right = detail (scrolls) — independent.
-   Pure white background, ink at ~90% black. Links are marked by an UNDERLINE,
-   never by colour. No rules, no dividers, no display flourishes.
+   Style: monospace, flat, archival; links by underline only; invisible scroll;
+          the interactive field fills the window.
+   Layout / typesetting: follows the original PDF spec —
+          · pure white background, ALL ink at 90% black (no greys)
+          · narrow justified text column with wide right margin
+          · title-case section headings, generous line-based vertical rhythm
+          · indented project/teaching list with bold lead-ins
+          · right interactive image = 61.11% of the page width
    ========================================================================== */
 
 :root {
@@ -12,15 +15,14 @@
   --left-w: 38.89vw;
 
   --paper: #ffffff;
-  --ink: #1a1a1a;            /* 90% black */
-  --muted: #8c8c8c;
+  --ink: #1a1a1a;            /* 90% black — used for ALL text */
 
   --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas,
           "Noto Sans SC", "PingFang SC", "Hiragino Sans GB",
           "Microsoft YaHei", monospace;
 
-  --pad-y: 2.4rem;
-  --pad-x: clamp(1.5rem, 3.6vw, 3.4rem);
+  --lh: 1.72;                /* line unit for the vertical rhythm */
+  --pad-y: 2.6rem;
 }
 
 * { box-sizing: border-box; }
@@ -33,14 +35,14 @@ body {
   color: var(--ink);
   font-family: var(--mono);
   font-weight: 400;
-  line-height: 1.72;
+  line-height: var(--lh);
   letter-spacing: 0.005em;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overflow: hidden;                       /* the panes own the scroll */
+  overflow: hidden;
 }
 
-/* Links: underline only, same ink colour as the text. */
+/* Links: underline only, same ink as the text. */
 a {
   color: inherit;
   text-decoration: underline;
@@ -58,36 +60,29 @@ a:hover, a:focus-visible { opacity: 0.55; }
 .master, .detail {
   position: fixed; top: 0;
   height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-  scrollbar-width: none;                  /* Firefox */
-  -ms-overflow-style: none;               /* old Edge/IE */
+  overflow-y: auto; overflow-x: hidden;
+  scrollbar-width: none; -ms-overflow-style: none;
 }
-.master::-webkit-scrollbar,
-.detail::-webkit-scrollbar { width: 0; height: 0; display: none; }
+.master::-webkit-scrollbar, .detail::-webkit-scrollbar { width: 0; height: 0; display: none; }
 
 .master {
   left: 0;
   width: var(--left-w);
-  padding: var(--pad-y) var(--pad-x) 3rem;
+  padding: var(--pad-y) clamp(1.5rem, 4.4vw, 3.8rem) 3rem;
   z-index: 2;
 }
-.master-inner { max-width: 30rem; }
+.master-inner { max-width: 30rem; }     /* narrow column → wide right margin */
 
-/* Right pane — interactive field (home). Fills the window edge to edge. */
 .hero {
   position: fixed; top: 0; right: 0;
   width: var(--right-w); height: 100vh;
-  background: #000004;
-  overflow: hidden;
+  background: #000004; overflow: hidden;
   z-index: 1;
 }
-.hero #deepfield { position: absolute; inset: 0; }
+.hero #deepfield { position: absolute; inset: 0; width: 100%; height: 100%; }
 
-/* Right pane — sub-page detail. */
 .detail {
-  display: none;
-  right: 0;
+  display: none; right: 0;
   width: var(--right-w);
   padding: var(--pad-y) clamp(1.6rem, 4vw, 4rem) 3rem;
   z-index: 1;
@@ -99,74 +94,67 @@ body[data-view="page"] .hero   { display: none; }
 body[data-view="page"] .detail { display: block; }
 
 /* --------------------------------------------------------------------------
-   Masthead
+   Masthead  (name + role, both 90% black; ~3 line gap before first section)
    -------------------------------------------------------------------------- */
-.brand { display: block; margin-bottom: 2.6rem; }
-.brand:hover { opacity: 1; }
+.brand { display: block; margin-bottom: calc(3 * var(--lh) * 1rem); }
 .brand .name { display: block; font-size: 1rem; color: var(--ink); }
 .brand .name .cjk { margin-left: 0.5em; }
-.brand .role { display: block; margin-top: 0.15rem; color: var(--muted); }
-.brand .home-hint {
-  display: block; margin-top: 0.6rem;
-  font-size: 0.78rem; letter-spacing: 0.12em; color: var(--muted);
-}
+.brand .role  { display: block; margin-top: calc(0.4 * var(--lh) * 1rem); font-size: 0.92rem; }
+.brand .home-hint { display: block; margin-top: calc(1 * var(--lh) * 1rem); font-size: 0.86rem; }
 body[data-view="home"] .brand .home-hint { display: none; }
 
 /* --------------------------------------------------------------------------
-   Left column content
+   Left column — sections
    -------------------------------------------------------------------------- */
-.block { margin-bottom: 2.4rem; }
+.block { margin: 0 0 calc(2.6 * var(--lh) * 1rem); }
+.block:last-child { margin-bottom: 0; }
 
 h2.heading {
-  font-size: 0.82rem;
-  font-weight: 400;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin: 0 0 0.9rem;
+  font-size: 1rem; font-weight: 400; color: var(--ink);
+  margin: 0 0 calc(1.22 * var(--lh) * 1rem);     /* ~1.22 lines under heading */
 }
 
-.block > p { margin: 0 0 0.95rem; }
+.block > p { margin: 0 0 calc(1 * var(--lh) * 1rem); text-align: justify; hyphens: none; }
 
-.items { margin: 0; padding: 0; list-style: none; }
-.items li { margin: 0 0 0.95rem; }
-.items li .lead::after { content: ":\00a0"; }   /* term-colon-space, same weight */
+/* project / teaching list: indented block, bold lead-in, no bullet glyphs */
+.items { margin: calc(1.1 * var(--lh) * 1rem) 0 0; padding: 0 0 0 1.7rem; list-style: none; }
+.items li { margin: 0 0 calc(2 * var(--lh) * 1rem); text-align: justify; hyphens: none; }
+.items li:last-child { margin-bottom: 0; }
+.items li .lead { font-weight: 600; }
+.items li .lead::after { content: ":\00a0"; font-weight: 600; }
 
 /* --------------------------------------------------------------------------
-   Right column (detail) — same flat treatment
+   Right column (detail) — same typesetting rules
    -------------------------------------------------------------------------- */
 .detail-inner { max-width: 42rem; }
 
-.detail-inner .kicker {
-  font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--muted); margin: 0 0 0.9rem;
-}
 .detail-inner h1.title {
-  font-size: 1rem; font-weight: 400; color: var(--ink);
-  margin: 0 0 1.1rem;
+  font-size: 1.1rem; font-weight: 600; color: var(--ink);
+  margin: 0 0 calc(1.22 * var(--lh) * 1rem);
 }
-.detail-inner .updated { color: var(--muted); margin: 0 0 1.4rem; }
-.detail-inner p { margin: 0 0 0.95rem; }
+.detail-inner .updated { margin: 0 0 calc(1.5 * var(--lh) * 1rem); }
+.detail-inner p { margin: 0 0 calc(1 * var(--lh) * 1rem); text-align: justify; hyphens: none; }
 
-.figure { margin: 1.4rem 0; }
+.figure { margin: calc(1.5 * var(--lh) * 1rem) 0; }
 .figure img { display: block; width: 100%; height: auto; }
-.figure figcaption { margin-top: 0.5rem; font-size: 0.82rem; color: var(--muted); }
+.figure figcaption { margin-top: calc(0.5 * var(--lh) * 1rem); font-size: 0.86rem; }
 
-/* CV — embedded PDF fills the pane */
+/* CV — embedded PDF fills the pane, with the "Academic CV / Updated" header row */
 .detail.cv { padding: 0; }
 .cv-bar {
   padding: var(--pad-y) clamp(1.6rem, 4vw, 4rem) 1rem;
-  display: flex; align-items: baseline; gap: 1.2rem; flex-wrap: wrap;
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 1.2rem; flex-wrap: wrap;
 }
 .cv-bar .title { margin: 0; }
 .cv-bar .updated { margin: 0; }
 .cv-frame { width: 100%; height: calc(100vh - 5rem); border: 0; display: block; background: #525659; }
-.cv-fallback { padding: 0.8rem clamp(1.6rem, 4vw, 4rem); font-size: 0.85rem; }
+.cv-fallback { padding: 0.8rem clamp(1.6rem, 4vw, 4rem); font-size: 0.86rem; }
 
 /* Gallery — plain images, no frames */
 .gallery-grid {
-  margin-top: 1.2rem; display: grid; grid-template-columns: 1fr 1fr;
-  gap: 0.7rem; grid-auto-flow: dense;
+  margin-top: calc(1 * var(--lh) * 1rem);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; grid-auto-flow: dense;
 }
 .gallery-grid figure { margin: 0; }
 .gallery-grid img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3 / 2; }
@@ -175,13 +163,13 @@ h2.heading {
 .gallery-grid .wide img { aspect-ratio: 2 / 1; }
 
 /* Students — whitespace-separated rows, no rules */
-.students { margin: 1.2rem 0 0; padding: 0; list-style: none; }
-.students li { display: grid; grid-template-columns: 72px 1fr; gap: 1.1rem; margin-bottom: 1.6rem; }
+.students { margin: calc(1 * var(--lh) * 1rem) 0 0; padding: 0; list-style: none; }
+.students li { display: grid; grid-template-columns: 72px 1fr; gap: 1.1rem; margin-bottom: calc(1.6 * var(--lh) * 1rem); }
 .students .photo { width: 72px; height: 72px; object-fit: cover; background: #eef1f3; }
 .students .who { color: var(--ink); margin-bottom: 0.2rem; }
 .students dl { margin: 0; }
 .students dl div { display: flex; gap: 0.6rem; }
-.students dl dt { color: var(--muted); min-width: 4.8rem; }
+.students dl dt { min-width: 4.8rem; }
 .students dl dd { margin: 0; }
 
 /* --------------------------------------------------------------------------
@@ -194,11 +182,9 @@ h2.heading {
   body::-webkit-scrollbar { width: 0; height: 0; display: none; }
 
   .shell { display: block; }
-  .master, .detail {
-    position: static; height: auto; width: 100%; overflow: visible;
-  }
+  .master, .detail { position: static; height: auto; width: 100%; overflow: visible; }
   .master { padding: 1.6rem 1.2rem 2rem; }
-  .master-inner, .detail-inner { max-width: 38rem; }
+  .master-inner, .detail-inner { max-width: 40rem; }
 
   .hero { position: relative; width: 100%; height: 62vh; min-height: 20rem; }
   body[data-view="page"] .hero { display: none; }
