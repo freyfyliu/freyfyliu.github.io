@@ -1,0 +1,4 @@
+- name: APRICOT
+  description: "A developing toolkit for stacking ALMA observations and examining galaxies too faint to study one by one. The project is in development; a public release is planned for 2027-2028."
+- name: AsterAtlas
+  description: "Star-chart generation software for astronomy education. It is currently in closed beta testing, so there is no public code link yet."
